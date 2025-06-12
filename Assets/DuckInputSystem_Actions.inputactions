@@ -1,0 +1,54 @@
+{
+    "name": "DuckInputSystem_Actions",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "18dd6fa8-0bef-492c-922b-b68b6ed80136",
+            "actions": [
+                {
+                    "name": "MoveTo",
+                    "type": "Button",
+                    "id": "3dcda228-e0d9-4980-9423-42379d40c438",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TryGrab",
+                    "type": "Button",
+                    "id": "b639eef9-a5ed-4163-97ea-65ae73a886f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "58609bc8-504c-49fe-b663-cb8c7d7b97ae",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e592c51a-ed2d-476d-85af-d387b8edfaa8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TryGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
