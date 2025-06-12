@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 public class DuckMovement : MonoBehaviour
 {
-    [Header("Tweables")]
+    [Header("Tweakables")]
     [SerializeField] protected float _followIntervalTime = .5f;
     [SerializeField] protected float _maxDucklings = 5;
     [SerializeField] protected bool _instantiatePrefabOnMove = false;
@@ -201,6 +201,11 @@ public class DuckMovement : MonoBehaviour
         _currentTargetPullable = null;
         _duckAgent.updateRotation = true;
         return;
+    }
+
+    public void OnTogglePlayerTrail(InputValue value)
+    {
+        _instantiatePrefabOnMove = !_instantiatePrefabOnMove;
     }
 
 }
