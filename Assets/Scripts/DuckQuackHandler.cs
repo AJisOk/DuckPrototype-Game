@@ -5,18 +5,29 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Linq;
+using UnityEditorInternal;
 
 public class DuckQuackHandler : MonoBehaviour
 {
     [SerializeField] protected string _ducklingsTagText;
     [SerializeField] protected bool _allDucklingsQuack = false;
     [SerializeField] protected float _ducklingQuackRange = 50f;
+    [SerializeField] protected AnimationCurve _quackAnimCurve;
+    [SerializeField] protected CanvasGroup _quackCG;
+    [SerializeField] protected float _quackAnimDuration = 1f;
+
+    private bool _isQuacking = false;
 
 
     public void OnQuack(InputValue value)
     {
-        GameObject[] ducklingGO;
+        if (_isQuacking) return;
 
+        _isQuacking = true;
+
+        StartCoroutine(QuackAnim());
+
+        GameObject[] ducklingGO;
         ducklingGO = GameObject.FindGameObjectsWithTag(_ducklingsTagText);
 
         if (_allDucklingsQuack)
@@ -35,7 +46,7 @@ public class DuckQuackHandler : MonoBehaviour
                 //if its within the duckling detection range
                 if(distanceFromPlayerDuckSquared <= (_ducklingQuackRange * _ducklingQuackRange))
                 {
-                   DucklingBehaviour dB = duckling.GetComponent<DucklingBehaviour>();
+                   DucklingBehaviour dB = duckling.GetComponentInChildren<DucklingBehaviour>();
 
                     dB.TryQuack();
                 }
@@ -50,6 +61,20 @@ public class DuckQuackHandler : MonoBehaviour
 
         }
 
+    }
 
+    private IEnumerator QuackAnim()
+    {
+        float timer = 0f;
+
+        while (timer < _quackAnimDuration)
+        {
+            _quackCG.alpha = _quackAnimCurve.Evaluate(timer);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        _quackCG.alpha = 0f;
+        _isQuacking = false;
+        yield return null;
     }
 }
