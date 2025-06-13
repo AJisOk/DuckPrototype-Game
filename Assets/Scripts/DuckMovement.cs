@@ -14,6 +14,10 @@ public class DuckMovement : MonoBehaviour
     [SerializeField] protected bool _instantiatePrefabOnMove = false;
     [SerializeField] protected float _remainingDistanceStopThreshold = 0.2f;
 
+    [Header("Pattern Challenge")]
+    [SerializeField] protected string _coreActionMapName;
+    [SerializeField] protected string _patternChallengeActionMapName;
+
     [Header("Core Pieces")]
     [SerializeField] protected LayerMask _pullableLayerMask;
     [SerializeField] protected int _pullableLayer = 6;
@@ -28,6 +32,7 @@ public class DuckMovement : MonoBehaviour
     private bool _isMoving = false;
     private bool _isPulling = false;
     private Pullable _currentTargetPullable = null;
+    private PlayerInput _playerInput;
 
     public bool IsPulling { get => _isPulling; set => _isPulling = value; }
 
@@ -37,6 +42,8 @@ public class DuckMovement : MonoBehaviour
         {
             _duckAgent = GetComponent<NavMeshAgent>();
         }
+
+        if(_playerInput == null) _playerInput = GetComponent<PlayerInput>();
     }
 
     private void FixedUpdate()
@@ -208,6 +215,17 @@ public class DuckMovement : MonoBehaviour
         _instantiatePrefabOnMove = !_instantiatePrefabOnMove;
     }
 
-    
+    public void StartPatternChallenge(PatternChallengeHandler challenge)
+    {
+        StopMovement();
+        //face duckling
+        //swap input mode
+        _playerInput.defaultActionMap = _patternChallengeActionMapName;
+
+
+
+        //enable pattern entry script/mode
+
+    }
 
 }
