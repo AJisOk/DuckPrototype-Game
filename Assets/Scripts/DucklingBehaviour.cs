@@ -25,4 +25,18 @@ public class DucklingBehaviour : MonoBehaviour
 
 
     }
+
+    public void TryQuack()
+    {
+        if (_isLost)
+        {
+            //play sound and trigger ui
+        }
+        else
+        {
+            //play kinder sound and animation
+        }
+    
+    }
+
 }
