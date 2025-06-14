@@ -17,6 +17,8 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected float _happyQuackAnimDuration;
     [SerializeField] protected Vector3 _defaultCGPostion;
 
+    [SerializeField] protected bool _hasPatternChallenge = false;
+
     [Header("Pattern Challenge")]
     [SerializeField] protected PatternChallengeHandler _patternChallengeHandler;
 
@@ -70,12 +72,20 @@ public class DucklingBehaviour : MonoBehaviour
         if(other.TryGetComponent<DuckMovement>(out DuckMovement duckPlayer) &&
             _isLost)
         {
-            StartPatternChallenge(duckPlayer);
 
-            //_isLost = false;
-            //duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
+            if (_hasPatternChallenge)
+            {
+                StartPatternChallenge(duckPlayer);
 
-            //_ducklingAttractionCollider.enabled = false;
+            }
+            else
+            {
+                _isLost = false;
+                duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
+
+                _ducklingAttractionCollider.enabled = false;
+
+            }
         }
     }
 

@@ -18,6 +18,10 @@ public class PatternChallengeHandler : MonoBehaviour
     [SerializeField] protected float _focusedOrthoSize = 4f;
     [SerializeField] protected List<int> _solutionPattern;
 
+    [Header("Player Pattern UI")]
+    [SerializeField] protected CanvasGroup _playerAttemptCG;
+    [SerializeField] protected List<TextMeshProUGUI> _playerAttemptTextList;
+
     private bool _isChallengeLive = false;
     private bool _isAcceptingAttempt = false;
     private CinemachineGroupFraming _cinemachineGroupFramingComponent;
@@ -54,6 +58,7 @@ public class PatternChallengeHandler : MonoBehaviour
             );
 
         _challengeCG.alpha = 1f;
+        _playerAttemptCG.alpha = 1f;
 
         _isAcceptingAttempt = true;
     }
@@ -64,14 +69,18 @@ public class PatternChallengeHandler : MonoBehaviour
 
         _attemptPattern.Add(noteToAdd.NoteID);
 
+        Debug.Log(noteToAdd.NoteID + " Added to attempt.");
+        Debug.Log("Current attempt count: " + _attemptPattern.Count);
+
+        _playerAttemptTextList[_attemptPattern.Count - 1].text = noteToAdd.NoteID.ToString();
+
+
         if(_attemptPattern.Count >= _solutionPattern.Count)
         {
             _isAcceptingAttempt = false;
             TestAttempt();
         }
 
-        Debug.Log(noteToAdd.NoteID + " Added to attempt.");
-        Debug.Log("Current attempt: " + _attemptPattern);
     }
 
     private void TestAttempt()
