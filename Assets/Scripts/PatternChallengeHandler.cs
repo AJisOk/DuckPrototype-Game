@@ -19,7 +19,11 @@ public class PatternChallengeHandler : MonoBehaviour
     [SerializeField] protected List<int> _solutionPattern;
 
     private bool _isChallengeLive = false;
+    private bool _isAcceptingAttempt = false;
     private CinemachineGroupFraming _cinemachineGroupFramingComponent;
+    private List<int> _attemptPattern = new List<int>();
+
+    public bool IsAcceptingAttempts { get => _isAcceptingAttempt; }
 
     private void Awake()
     {
@@ -46,10 +50,62 @@ public class PatternChallengeHandler : MonoBehaviour
         _challengeRectTransform.position = new Vector3(
             _challengeRectTransform.position.x + _cRectTranformXOffset,
             _challengeRectTransform.position.y + _cRectTranformYOffset,
-            _challengeRectTransform.position.z);
+            _challengeRectTransform.position.z
+            );
 
         _challengeCG.alpha = 1f;
 
+        _isAcceptingAttempt = true;
+    }
+
+    public void AddNoteToAttempt(PatternChallengeNote noteToAdd)
+    {
+        Debug.Log("AddNoteToAttempt called");
+
+        _attemptPattern.Add(noteToAdd.NoteID);
+
+        if(_attemptPattern.Count >= _solutionPattern.Count)
+        {
+            _isAcceptingAttempt = false;
+            TestAttempt();
+        }
+
+        Debug.Log(noteToAdd.NoteID + " Added to attempt.");
+        Debug.Log("Current attempt: " + _attemptPattern);
+    }
+
+    private void TestAttempt()
+    {
+        bool isAttemptCorrect = true;
+
+        for (int i = 0; i < _solutionPattern.Count; i++)
+        {
+            if (_attemptPattern[i] != _solutionPattern[i])
+            {
+                isAttemptCorrect = false;
+                break;
+            }
+        }
+
+        if (isAttemptCorrect)
+        {
+            AttemptCorrect();
+        }
+        else
+        {
+            AttemptFailed();
+        }
+
+    }
+
+    private void AttemptCorrect()
+    {
+        Debug.Log("attempt correct!");
+    }
+
+    private void AttemptFailed()
+    {
+        Debug.Log("attempt incorrect");
 
     }
 }

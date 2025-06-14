@@ -1,0 +1,134 @@
+{
+    "name": "PatternChallengeInputSystem_Actions",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "ccbf7a69-24ca-4e52-bca8-2e41546de0ff",
+            "actions": [
+                {
+                    "name": "TrySelectNote",
+                    "type": "Button",
+                    "id": "00f57256-bbc2-4a60-8a50-b745e65a0537",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleDebugMenu",
+                    "type": "Button",
+                    "id": "1319940d-348f-4a69-a89e-e5fb6771d281",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ReloadScene",
+                    "type": "Button",
+                    "id": "f5466d52-73ef-4d3e-b29b-7ef648991b7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TogglePlayerTrail",
+                    "type": "Button",
+                    "id": "53183ac3-feaf-41ac-8d30-667c573f8039",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseDemo",
+                    "type": "Button",
+                    "id": "1ff71474-0236-4699-95cf-e63081f0d71a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ExitPatternChallenge",
+                    "type": "Button",
+                    "id": "90409afb-3482-439d-9d1a-9275e7498d6e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d9b9d715-e026-41c3-b590-6d209b979a55",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrySelectNote",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb3adbfc-6f11-4716-b15c-2f8707878f97",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleDebugMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bed3506-942d-46be-9838-4eabb148287c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReloadScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7a0d218-1c7f-4910-b04a-76181d389595",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TogglePlayerTrail",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bbd7fd6-84ba-44dc-b670-2fc821dfa371",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseDemo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8080c146-aab5-49eb-8fce-2331ceb03e71",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitPatternChallenge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

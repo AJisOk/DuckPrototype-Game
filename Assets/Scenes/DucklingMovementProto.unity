@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -412,6 +412,7 @@ MonoBehaviour:
   _cinemachinTargetGroup: {fileID: 1372435983}
   _baseOrthoSize: 6
   _focusedOrthoSize: 4
+  _solutionPattern: 00000000000000000000000000000000
 --- !u!114 &277404910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2863,7 +2864,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3867,7 +3868,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4395,6 +4396,22 @@ PrefabInstance:
     - target: {fileID: 2196908276348227754, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: m_Name
       value: DuckPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _duckActionMap.m_Id
+      value: 978703ad-e75e-47b8-a917-fcb91a0cd939
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _duckActionMap.m_Name
+      value: Duck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _patternChallengeActionMap.m_Actions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _patternChallengeActionMap.m_Bindings.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5232859548427787283, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: _debugMenuCG

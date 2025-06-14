@@ -15,8 +15,10 @@ public class DuckMovement : MonoBehaviour
     [SerializeField] protected float _remainingDistanceStopThreshold = 0.2f;
 
     [Header("Pattern Challenge")]
-    [SerializeField] protected string _coreActionMapName;
-    [SerializeField] protected string _patternChallengeActionMapName;
+    //[SerializeField] protected string _coreActionMapName;
+    //[SerializeField] protected string _patternChallengeActionMapName;
+    [SerializeField] protected InputActionAsset _duckActionAsset;
+    [SerializeField] protected InputActionAsset _patternChallengeActionAsset;
 
     [Header("Core Pieces")]
     [SerializeField] protected LayerMask _pullableLayerMask;
@@ -33,6 +35,7 @@ public class DuckMovement : MonoBehaviour
     private bool _isPulling = false;
     private Pullable _currentTargetPullable = null;
     private PlayerInput _playerInput;
+    private PatternChallengeHandler _currentPatternChallenge;
 
     public bool IsPulling { get => _isPulling; set => _isPulling = value; }
 
@@ -217,15 +220,54 @@ public class DuckMovement : MonoBehaviour
 
     public void StartPatternChallenge(PatternChallengeHandler challenge)
     {
+        _currentPatternChallenge = challenge;
+
         StopMovement();
         //face duckling
         //swap input mode
-        _playerInput.defaultActionMap = _patternChallengeActionMapName;
-
-
+        _playerInput.actions = _patternChallengeActionAsset;
 
         //enable pattern entry script/mode
 
     }
 
+    private void StopPatternChallenge(bool isSuccessful)
+    {
+
+    }
+
+    public void OnTrySelectNote(InputValue value)
+    {
+        Debug.Log("OnTrySelectNote called");
+
+        if (!_currentPatternChallenge.IsAcceptingAttempts) return;
+
+        Debug.Log("before raycast");
+
+        RaycastHit hit;
+        PatternChallengeNote hitNote;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log("raycast hit");
+
+            if(hit.collider.TryGetComponent<PatternChallengeNote>(out hitNote))
+            {
+                Debug.Log("raycast hit collider with note");
+                _currentPatternChallenge.AddNoteToAttempt(hitNote);
+
+                return;
+            }
+
+            Debug.Log("raycast did not hit collider with note");
+        }
+
+
+    }
+
+    public void OnExitPatternChallenge(InputValue value)
+    {
+        //calls stop pattern challenge
+    }
 }

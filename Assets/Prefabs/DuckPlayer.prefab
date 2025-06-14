@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 4910403790862461293}
   - component: {fileID: 5232859548427787283}
   - component: {fileID: 3635842771388224077}
+  - component: {fileID: 3413630979418676950}
   m_Layer: 7
   m_Name: DuckPlayer
   m_TagString: Untagged
@@ -346,6 +347,8 @@ MonoBehaviour:
   _maxDucklings: 5
   _instantiatePrefabOnMove: 0
   _remainingDistanceStopThreshold: 1
+  _duckActionAsset: {fileID: -944628639613478452, guid: b5a2e302e98ccfb4d9e5d05bba6957fe, type: 3}
+  _patternChallengeActionAsset: {fileID: -944628639613478452, guid: 18e948bb15548d6429c94d7c04bd0648, type: 3}
   _pullableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -470,6 +473,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   _quackCG: {fileID: 402656216516705517}
   _quackAnimDuration: 2
+--- !u!114 &3413630979418676950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196908276348227754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655adecbf081a8f489ecf51bbe263377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _noteID: 0
+  _meshToHiglight: {fileID: 893105513463164596}
+  _highlightMaterial: {fileID: 2100000, guid: 774243725bac5b748949dcfcb01ae033, type: 2}
 --- !u!1 &3751843867403416825
 GameObject:
   m_ObjectHideFlags: 0
