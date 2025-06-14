@@ -110,6 +110,8 @@ public class PatternChallengeHandler : MonoBehaviour
     private void AttemptCorrect()
     {
         Debug.Log("attempt correct!");
+
+
     }
 
     private void AttemptFailed()

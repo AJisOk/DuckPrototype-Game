@@ -3,9 +3,6 @@ using UnityEngine.InputSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Linq;
-using UnityEditorInternal;
 
 public class DuckQuackHandler : MonoBehaviour
 {
