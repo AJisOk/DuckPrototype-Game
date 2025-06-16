@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fixedJoint: {fileID: 3831560676963470034}
   _duckLayer: 7
+  _grabbedMaterial: {fileID: 2100000, guid: 72478ac6eb123394882728d676ab058b, type: 2}
 --- !u!65 &4350533890526026686
 BoxCollider:
   m_ObjectHideFlags: 0
