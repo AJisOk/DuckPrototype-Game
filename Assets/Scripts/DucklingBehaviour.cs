@@ -75,7 +75,7 @@ public class DucklingBehaviour : MonoBehaviour
 
             if (_hasPatternChallenge)
             {
-                StartPatternChallenge(duckPlayer);
+                //StartPatternChallenge(duckPlayer);
 
             }
             else
@@ -127,6 +127,8 @@ public class DucklingBehaviour : MonoBehaviour
         float timer = 0f;
         _isQuacking = true;
 
+        //FOR BRIAN duckling quacking when not collected here
+
         while (timer <= _lostQuackAnimDuration)
         {
             _lostQuackCG.alpha = _quackAnimCurve.Evaluate(timer);
@@ -146,6 +148,8 @@ public class DucklingBehaviour : MonoBehaviour
         float timer = 0f;
         _isQuacking = true;
 
+        //FOR BRIAN duckling quacking when IS collected here
+
         while (timer <= _happyQuackAnimDuration)
         {
             _happyQuackCG.alpha = _quackAnimCurve.Evaluate(timer);
@@ -160,18 +164,18 @@ public class DucklingBehaviour : MonoBehaviour
         yield return null;
     }
 
-    private void StartPatternChallenge(DuckMovement duckPlayer)
-    {
-        duckPlayer.StartPatternChallenge(_patternChallengeHandler);
-        //face player
+    //private void StartPatternChallenge(DuckMovement duckPlayer)
+    //{
+    //    duckPlayer.StartPatternChallenge(_patternChallengeHandler);
+    //    //face player
 
-        //show canvas with required pattern
-        _patternChallengeHandler.StartChallenge(transform);
+    //    //show canvas with required pattern
+    //    _patternChallengeHandler.StartChallenge(transform);
 
-        //play anim
+    //    //play anim
 
 
-    }
+    //}
 
     private void StartFollowPlayerDuck(DuckMovement duckPlayer)
     {

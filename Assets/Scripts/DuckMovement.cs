@@ -93,6 +93,7 @@ public class DuckMovement : MonoBehaviour
             _duckAgent.updateRotation = false;
         }
         
+        //FOR BRIAN Pulling starts here
         _isPulling = true;
 
     }
@@ -121,6 +122,7 @@ public class DuckMovement : MonoBehaviour
 
     public void AddDuckling(NavMeshAgent ducklingAgentToAdd)
     {
+        //FOR BRIAN duckling collected here
         _ducklingAgents.Add(ducklingAgentToAdd);
     }
 
@@ -162,6 +164,7 @@ public class DuckMovement : MonoBehaviour
         {
             //stop pulling + targeting current target
             OnUntargetPullable();
+            //FOR BRIAN stops pulling here
             _isPulling = false;
             return;
         }
@@ -170,6 +173,7 @@ public class DuckMovement : MonoBehaviour
         {
             //stop pulling + targeting current target and start targeting new target pullable
             OnUntargetPullable();
+            //FOR BRIAN stops pulling here
             _isPulling = false;
             OnTargetPullable(targetPullable);
             return;
@@ -218,56 +222,56 @@ public class DuckMovement : MonoBehaviour
         _instantiatePrefabOnMove = !_instantiatePrefabOnMove;
     }
 
-    public void StartPatternChallenge(PatternChallengeHandler challenge)
-    {
-        _currentPatternChallenge = challenge;
+    //public void StartPatternChallenge(PatternChallengeHandler challenge)
+    //{
+    //    _currentPatternChallenge = challenge;
 
-        StopMovement();
-        //face duckling
-        //swap input mode
-        _playerInput.actions = _patternChallengeActionAsset;
+    //    StopMovement();
+    //    //face duckling
+    //    //swap input mode
+    //    _playerInput.actions = _patternChallengeActionAsset;
 
-        //enable pattern entry script/mode
+    //    //enable pattern entry script/mode
 
-    }
+    //}
 
-    private void StopPatternChallenge(bool isSuccessful)
-    {
+    //private void StopPatternChallenge(bool isSuccessful)
+    //{
 
-    }
+    //}
 
-    public void OnTrySelectNote(InputValue value)
-    {
-        Debug.Log("OnTrySelectNote called");
+    //public void OnTrySelectNote(InputValue value)
+    //{
+    //    Debug.Log("OnTrySelectNote called");
 
-        if (!_currentPatternChallenge.IsAcceptingAttempts) return;
+    //    if (!_currentPatternChallenge.IsAcceptingAttempts) return;
 
-        Debug.Log("before raycast");
+    //    Debug.Log("before raycast");
 
-        RaycastHit hit;
-        PatternChallengeNote hitNote;
+    //    RaycastHit hit;
+    //    PatternChallengeNote hitNote;
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log("raycast hit");
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    if (Physics.Raycast(ray, out hit))
+    //    {
+    //        Debug.Log("raycast hit");
 
-            if(hit.collider.TryGetComponent<PatternChallengeNote>(out hitNote))
-            {
-                Debug.Log("raycast hit collider with note");
-                _currentPatternChallenge.AddNoteToAttempt(hitNote);
+    //        if(hit.collider.TryGetComponent<PatternChallengeNote>(out hitNote))
+    //        {
+    //            Debug.Log("raycast hit collider with note");
+    //            _currentPatternChallenge.AddNoteToAttempt(hitNote);
 
-                return;
-            }
+    //            return;
+    //        }
 
-            Debug.Log("raycast did not hit collider with note");
-        }
+    //        Debug.Log("raycast did not hit collider with note");
+    //    }
 
 
-    }
+    //}
 
-    public void OnExitPatternChallenge(InputValue value)
-    {
-        //calls stop pattern challenge
-    }
+    //public void OnExitPatternChallenge(InputValue value)
+    //{
+    //    //calls stop pattern challenge
+    //}
 }

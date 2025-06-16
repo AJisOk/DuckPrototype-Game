@@ -64,6 +64,8 @@ public class DuckQuackHandler : MonoBehaviour
     {
         float timer = 0f;
 
+        //FOR BRIAN player duck quacks here
+
         while (timer < _quackAnimDuration)
         {
             _quackCG.alpha = _quackAnimCurve.Evaluate(timer);
