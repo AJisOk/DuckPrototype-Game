@@ -38,6 +38,7 @@ public class DuckMovement : MonoBehaviour
     private PatternChallengeHandler _currentPatternChallenge;
 
     public bool IsPulling { get => _isPulling; set => _isPulling = value; }
+    public int PullingStrength { get => _ducklingAgents.Count; }
 
     private void Awake()
     {
@@ -215,6 +216,15 @@ public class DuckMovement : MonoBehaviour
         _currentTargetPullable = null;
         _duckAgent.updateRotation = true;
         return;
+    }
+
+    public void PullableTooHeavy()
+    {
+        //feedback on duckling when pullable too heavy
+
+        Debug.Log("Targeted Pullable too heavy");
+
+        OnUntargetPullable();
     }
 
     public void OnTogglePlayerTrail(InputValue value)

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Pullable : MonoBehaviour
@@ -5,10 +6,13 @@ public class Pullable : MonoBehaviour
     [SerializeField] protected FixedJoint _fixedJoint;
     [SerializeField] protected int _duckLayer = 7;
     [SerializeField] protected Material _grabbedMaterial;
+    [SerializeField] protected int _weightValue = 0;
+    [SerializeField] protected TextMeshProUGUI _debugWeightText;
 
     private Material _defaultMaterial;
     private bool _isTargeted = false;
     private MeshRenderer _meshRenderer;
+    
 
     public bool IsTargeted {get => _isTargeted; private set => _isTargeted = value; }
     public bool IsGrabbed { get => (_fixedJoint.connectedBody != null); }
@@ -21,18 +25,14 @@ public class Pullable : MonoBehaviour
             _meshRenderer = GetComponent<MeshRenderer>();
             _defaultMaterial = _meshRenderer.material;
         }
+
+        if(_debugWeightText != null) _debugWeightText.text = _weightValue.ToString();
     }
 
-    private void FixedUpdate()
-    {
-        //if (IsGrabbed && _meshRenderer.material == _defaultMaterial) _meshRenderer.material = _grabbedMaterial;
-        //if (!IsGrabbed && _meshRenderer.material == _grabbedMaterial) _meshRenderer.material = _defaultMaterial;
-    }
 
     public void OnTargeted()
     {
         _isTargeted = true;
-
 
     }
 
@@ -47,8 +47,17 @@ public class Pullable : MonoBehaviour
     {
         if (!_isTargeted) return;
         if (collision.gameObject.layer != _duckLayer) return;
-
         print("Duck Collided with Pullable");
+
+        DuckMovement playerDuck = collision.gameObject.GetComponent<DuckMovement>();
+
+        if (playerDuck.PullingStrength < _weightValue)
+        {
+            //object to heavy feedback
+            playerDuck.PullableTooHeavy();
+
+            return;
+        }
 
 
         _meshRenderer.material = _grabbedMaterial;
