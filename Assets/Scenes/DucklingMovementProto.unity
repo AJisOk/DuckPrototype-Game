@@ -2297,6 +2297,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 307575682748073262, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 307575682748073262, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1022816238437684048, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2384,9 +2392,9 @@ SceneRoots:
   - {fileID: 1779244153}
   - {fileID: 1106176162}
   - {fileID: 2435604639186998613}
+  - {fileID: 2080711897}
+  - {fileID: 684058663}
   - {fileID: 811393395}
   - {fileID: 1732002160}
   - {fileID: 802537511208840796}
   - {fileID: 4567114076755750418}
-  - {fileID: 2080711897}
-  - {fileID: 684058663}

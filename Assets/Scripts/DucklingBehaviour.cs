@@ -15,7 +15,10 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected float _lostQuackAnimDuration;
     [SerializeField] protected float _lostQuackAnimDelay = .5f;
     [SerializeField] protected float _happyQuackAnimDuration;
-    [SerializeField] protected Vector3 _defaultCGPostion;
+    [SerializeField] protected Vector3 _lostImageLocalOffset;
+    [SerializeField] protected RectTransform _lostImageRectTransform;
+    [SerializeField] protected float _offScreenBufferDistanceX = 120f;
+    [SerializeField] protected float _offScreenBufferDistanceY = 70f;
 
     [SerializeField] protected bool _hasPatternChallenge = false;
 
@@ -28,7 +31,6 @@ public class DucklingBehaviour : MonoBehaviour
     private Vector3 _canvasPositionScreenPoint;
     private Vector3 _cappedCanvasScreenPosition;
     private Vector3 _cGWorldPosition;
-    private RectTransform _lostCanvasRectTransform;
 
     private bool isQuackCanvasOffScreen 
     { 
@@ -40,29 +42,35 @@ public class DucklingBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        _lostCanvasRectTransform = _lostQuackCG.GetComponent<RectTransform>();
+        //_lostImageRectTransform = _lostQuackCG.GetComponentInChildren<RectTransform>();
     }
 
     private void Update()
     {
-        _canvasPositionScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        _canvasPositionScreenPoint = Camera.main.WorldToScreenPoint((transform.position + _lostImageLocalOffset));
         _cappedCanvasScreenPosition = _canvasPositionScreenPoint;
 
         if (isQuackCanvasOffScreen)
         {
-            _cappedCanvasScreenPosition.x = (_cappedCanvasScreenPosition.x <= 0) ? 0f : _cappedCanvasScreenPosition.x;
-            _cappedCanvasScreenPosition.x = (_cappedCanvasScreenPosition.x >= Screen.width) ? Screen.width : _cappedCanvasScreenPosition.x;
-            _cappedCanvasScreenPosition.y = (_cappedCanvasScreenPosition.y <= 0) ? 0f : _cappedCanvasScreenPosition.y;
-            _cappedCanvasScreenPosition.y = (_cappedCanvasScreenPosition.y >= Screen.height) ? Screen.height : _cappedCanvasScreenPosition.y;
+            _cappedCanvasScreenPosition.x = (_cappedCanvasScreenPosition.x <= 0) ? 0f + _offScreenBufferDistanceX : _cappedCanvasScreenPosition.x;
+            _cappedCanvasScreenPosition.x = (_cappedCanvasScreenPosition.x >= Screen.width) ? Screen.width - _offScreenBufferDistanceX : _cappedCanvasScreenPosition.x;
+            _cappedCanvasScreenPosition.y = (_cappedCanvasScreenPosition.y <= 0) ? 0f + _offScreenBufferDistanceY : _cappedCanvasScreenPosition.y;
+            _cappedCanvasScreenPosition.y = (_cappedCanvasScreenPosition.y >= Screen.height) ? Screen.height - _offScreenBufferDistanceY : _cappedCanvasScreenPosition.y;
 
-            _cGWorldPosition = Camera.main.ScreenToWorldPoint(_cappedCanvasScreenPosition);
-            _lostCanvasRectTransform.position = _cGWorldPosition;
+            _lostImageRectTransform.position = _cappedCanvasScreenPosition;
+            //_cGWorldPosition = Camera.main.ScreenToWorldPoint(_cappedCanvasScreenPosition);
             //_lostCanvasRectTransform.localPosition = new Vector3(_lostCanvasRectTransform.localPosition.x, _lostCanvasRectTransform.localPosition.y, 0f);
         }
         else
         {
-            _lostCanvasRectTransform.localPosition = _defaultCGPostion;
+            _lostImageRectTransform.position = _cappedCanvasScreenPosition;
         }
+
+        //if duckling is on screen > move the image to the screen position of the world point above the ducklings head
+        //if duckling is OFF screen > move the image to the screen position closest to the world point position of the duckling
+
+
+
     }
 
     private void OnTriggerEnter(Collider other)
