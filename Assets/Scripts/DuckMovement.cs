@@ -4,6 +4,9 @@ using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TreeEditor;
+using System.Net.Sockets;
 
 
 public class DuckMovement : MonoBehaviour
@@ -28,6 +31,7 @@ public class DuckMovement : MonoBehaviour
     //[SerializeField] protected float _currentDucklings = 1;
     [SerializeField] protected List<NavMeshAgent> _ducklingAgents = new List<NavMeshAgent>();
     [SerializeField] protected List<Vector3> _ducklingNextPositions = new List<Vector3>();
+    [SerializeField] protected Animator _spriteAnimator;
 
     private Transform _targetLocation;
     private float _timer;
@@ -36,6 +40,7 @@ public class DuckMovement : MonoBehaviour
     private Pullable _currentTargetPullable = null;
     private PlayerInput _playerInput;
     private PatternChallengeHandler _currentPatternChallenge;
+    private Vector3 _moveToHitPoint;
 
     public bool IsPulling { get => _isPulling; set => _isPulling = value; }
     public int PullingStrength { get => _ducklingAgents.Count; }
@@ -83,6 +88,26 @@ public class DuckMovement : MonoBehaviour
 
     }
 
+    private void LateUpdate()
+    {
+        float normalizedEulerAngle = Mathf.InverseLerp(0f, 360f, transform.rotation.eulerAngles.y);
+
+        //use the player ducks transform to get paramaters we need for the animator (moveX and moveY)
+        //Debug.Log("Player duck normalized euler angle:  " + normalizedEulerAngle);
+
+        _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
+
+        //337.5 - 22.5 : 0,1
+        //22.5 - 67.5 : 1,1
+        //67.5 - 112.5 : 1,0
+        //112.5 - 157.5 : 1, -1
+        //157.5 - 202.5 : 0, -1
+        //202.5 - 247.5 : -1, -1
+        //247.5 - 292.5 : -1, 0
+        //292.5 - 337.5 : -1, 1
+        
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(_currentTargetPullable == null) return;
@@ -111,6 +136,7 @@ public class DuckMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hit))
         {
             _duckAgent.SetDestination(hit.point);
+            _moveToHitPoint = hit.point;
             _isMoving = true;
         }
 

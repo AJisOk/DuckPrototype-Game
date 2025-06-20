@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &975504447445642114
 Transform:
   m_ObjectHideFlags: 0
@@ -302,6 +302,7 @@ MonoBehaviour:
   _gOToInstantiate: {fileID: 8904223346046912649, guid: 352263489cc4f8d41b012352a8dce268, type: 3}
   _ducklingAgents: []
   _ducklingNextPositions: []
+  _spriteAnimator: {fileID: 5851700563715445694}
 --- !u!114 &7161702867312113651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +559,7 @@ GameObject:
   - component: {fileID: 2966383726907030254}
   - component: {fileID: 6852672233672159583}
   - component: {fileID: 1276749360461443692}
+  - component: {fileID: 5851700563715445694}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -574,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 4578493726817455402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.258, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -624,7 +626,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: c1e90c53bd9c33e44ad9ea82a2dfaab1, type: 3}
+  m_Sprite: {fileID: -1769082347, guid: 8a8af4b325a44ac4897dbda890301654, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -647,6 +649,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5857f9c3caf0a4f4e82350a8de06c8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5851700563715445694
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578493726817455402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d29b844eaa362d4c958be6875d8be9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5406178575560044509
 GameObject:
   m_ObjectHideFlags: 0
