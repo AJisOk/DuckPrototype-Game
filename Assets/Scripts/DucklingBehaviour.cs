@@ -22,6 +22,9 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected float _offScreenBufferDistanceY = 70f;
     [SerializeField] protected Animator _spriteAnimator;
     [SerializeField] protected Transform _ducklingTransform;
+    [SerializeField] protected float _spottedAnimDuration;
+    [SerializeField] protected AnimationCurve _spottedAnimCurve;
+    [SerializeField] protected CanvasGroup _spottedCG;
 
     //[SerializeField] protected bool _hasPatternChallenge = false;
 
@@ -31,10 +34,19 @@ public class DucklingBehaviour : MonoBehaviour
 
     private bool _isLost = true;
     private bool _isQuacking = false;
+    private bool _hasBeenSpotted = false;
     private Vector3 _canvasPositionScreenPoint;
     private Vector3 _cappedCanvasScreenPosition;
+    private Vector3 _ducklingPositionScreenPoint;
 
 
+    private bool _isDucklingOnScreen
+    {
+        get => _ducklingPositionScreenPoint.x > 0 &&
+            _ducklingPositionScreenPoint.x < Screen.width &&
+            _ducklingPositionScreenPoint.y > 0 &&
+            _ducklingPositionScreenPoint.y < Screen.height;
+    }
     private bool isQuackCanvasOffScreen 
     { 
         get => _canvasPositionScreenPoint.x <= 0 ||
@@ -54,6 +66,10 @@ public class DucklingBehaviour : MonoBehaviour
 
     private void Update()
     {
+        _ducklingPositionScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        if(!_hasBeenSpotted && _isDucklingOnScreen) OnDucklingFirstSpotted();
+
+
         _canvasPositionScreenPoint = Camera.main.WorldToScreenPoint((transform.position + _lostImageLocalOffset));
         _cappedCanvasScreenPosition = _canvasPositionScreenPoint;
 
@@ -72,6 +88,7 @@ public class DucklingBehaviour : MonoBehaviour
         {
             _lostImageRectTransform.position = _cappedCanvasScreenPosition;
         }
+
 
         //if duckling is on screen > move the image to the screen position of the world point above the ducklings head
         //if duckling is OFF screen > move the image to the screen position closest to the world point position of the duckling
@@ -94,6 +111,15 @@ public class DucklingBehaviour : MonoBehaviour
         {
             StartFollowPlayerDuck(duckPlayer);
         }
+    }
+
+    private void OnDucklingFirstSpotted()
+    {
+        _hasBeenSpotted = true;
+
+        //FOR BRIAN - Duckling first spotted event (on duckling)
+
+        StartCoroutine(PlayerDuckSpotted());
     }
 
     public void TryQuack()
@@ -125,6 +151,22 @@ public class DucklingBehaviour : MonoBehaviour
 
             StartCoroutine(HappyQuackAnim());
         }
+    }
+
+    private IEnumerator PlayerDuckSpotted()
+    {
+        float timer = 0f;
+
+        while (timer < _spottedAnimDuration)
+        {
+            _spottedCG.alpha = _spottedAnimCurve.Evaluate(timer);
+            timer+= Time.deltaTime;
+            yield return null;
+        }
+
+        _spottedCG.alpha = 0f;
+
+        yield return null;
     }
 
     private IEnumerator LostQuackAnim()
