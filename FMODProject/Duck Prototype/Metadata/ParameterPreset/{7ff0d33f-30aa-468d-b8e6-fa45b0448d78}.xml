@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{7ff0d33f-30aa-468d-b8e6-fa45b0448d78}">
+		<property name="name">
+			<value>Duck_Pulling</value>
+		</property>
+		<relationship name="folder">
+			<destination>{87aecb69-7769-4381-ae04-1bfd2d1adc6f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{30bf780c-9211-4232-9b6b-20860d500775}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{30bf780c-9211-4232-9b6b-20860d500775}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
