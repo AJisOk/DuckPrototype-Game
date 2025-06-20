@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -32,7 +33,8 @@ public class DucklingBehaviour : MonoBehaviour
     private bool _isQuacking = false;
     private Vector3 _canvasPositionScreenPoint;
     private Vector3 _cappedCanvasScreenPosition;
-    private Vector3 _cGWorldPosition;
+
+
     private bool isQuackCanvasOffScreen 
     { 
         get => _canvasPositionScreenPoint.x <= 0 ||
@@ -44,8 +46,9 @@ public class DucklingBehaviour : MonoBehaviour
     private void Awake()
     {
         //_lostImageRectTransform = _lostQuackCG.GetComponentInChildren<RectTransform>();
-
         //if(_ducklingTransform == null) _ducklingTransform = GetComponentInParent<Transform>();
+
+        
 
     }
 
@@ -89,11 +92,7 @@ public class DucklingBehaviour : MonoBehaviour
 
         if(other.TryGetComponent<DuckMovement>(out DuckMovement duckPlayer) && _isLost)
         {
-            _isLost = false;
-            duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
-
-            _ducklingAttractionCollider.enabled = false;
-
+            StartFollowPlayerDuck(duckPlayer);
         }
     }
 

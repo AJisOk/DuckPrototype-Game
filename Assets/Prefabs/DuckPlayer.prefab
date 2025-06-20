@@ -303,6 +303,12 @@ MonoBehaviour:
   _ducklingAgents: []
   _ducklingNextPositions: []
   _spriteAnimator: {fileID: 5851700563715445694}
+  _moveToLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  _targetGroup: {fileID: 0}
+  _ducklingTGWeight: 1
+  _ducklingTGRadius: 0
 --- !u!114 &7161702867312113651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabToInstantiate: {fileID: 9065315246283202652, guid: a1033e5331d158d40bb6e6024591e6b3, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &5232859548427787283
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TreeEditor;
 using System.Net.Sockets;
+using Unity.Cinemachine;
 
 
 public class DuckMovement : MonoBehaviour
@@ -32,6 +33,13 @@ public class DuckMovement : MonoBehaviour
     [SerializeField] protected List<NavMeshAgent> _ducklingAgents = new List<NavMeshAgent>();
     [SerializeField] protected List<Vector3> _ducklingNextPositions = new List<Vector3>();
     [SerializeField] protected Animator _spriteAnimator;
+    [SerializeField] protected LayerMask _moveToLayerMask;
+
+    [Header("Cinemachine Target Group")]
+    [SerializeField] protected CinemachineTargetGroup _targetGroup;
+    [SerializeField] protected float _ducklingTGWeight = 1f;
+    [SerializeField] protected float _ducklingTGRadius = 0f;
+
 
     private Transform _targetLocation;
     private float _timer;
@@ -53,6 +61,10 @@ public class DuckMovement : MonoBehaviour
         }
 
         if(_playerInput == null) _playerInput = GetComponent<PlayerInput>();
+
+        if (_targetGroup == null) _targetGroup = (CinemachineTargetGroup)FindFirstObjectByType(typeof(CinemachineTargetGroup));
+
+        if (_targetGroup != null) Debug.Log("cinemachineTargetGroup Found");
     }
 
     private void FixedUpdate()
@@ -96,7 +108,8 @@ public class DuckMovement : MonoBehaviour
         //Debug.Log("Player duck normalized euler angle:  " + normalizedEulerAngle);
 
         _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
-
+        
+        //euler y rotation ranges to x,y coordinates for spritesheet ref
         //337.5 - 22.5 : 0,1
         //22.5 - 67.5 : 1,1
         //67.5 - 112.5 : 1,0
@@ -133,7 +146,7 @@ public class DuckMovement : MonoBehaviour
         //casts ray in game world based on mouse position
         //if there is a hit, move to the point that was hit
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, _moveToLayerMask,QueryTriggerInteraction.Ignore))
         {
             _duckAgent.SetDestination(hit.point);
             _moveToHitPoint = hit.point;
@@ -151,6 +164,8 @@ public class DuckMovement : MonoBehaviour
     {
         //FOR BRIAN duckling collected here
         _ducklingAgents.Add(ducklingAgentToAdd);
+
+        _targetGroup.AddMember(ducklingAgentToAdd.transform, _ducklingTGWeight, _ducklingTGRadius);
     }
 
     public void OnTryGrab(InputValue value)
