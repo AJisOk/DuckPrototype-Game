@@ -19,8 +19,10 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected RectTransform _lostImageRectTransform;
     [SerializeField] protected float _offScreenBufferDistanceX = 120f;
     [SerializeField] protected float _offScreenBufferDistanceY = 70f;
+    [SerializeField] protected Animator _spriteAnimator;
+    [SerializeField] protected Transform _ducklingTransform;
 
-    [SerializeField] protected bool _hasPatternChallenge = false;
+    //[SerializeField] protected bool _hasPatternChallenge = false;
 
     [Header("Pattern Challenge")]
     [SerializeField] protected PatternChallengeHandler _patternChallengeHandler;
@@ -31,7 +33,6 @@ public class DucklingBehaviour : MonoBehaviour
     private Vector3 _canvasPositionScreenPoint;
     private Vector3 _cappedCanvasScreenPosition;
     private Vector3 _cGWorldPosition;
-
     private bool isQuackCanvasOffScreen 
     { 
         get => _canvasPositionScreenPoint.x <= 0 ||
@@ -43,6 +44,9 @@ public class DucklingBehaviour : MonoBehaviour
     private void Awake()
     {
         //_lostImageRectTransform = _lostQuackCG.GetComponentInChildren<RectTransform>();
+
+        //if(_ducklingTransform == null) _ducklingTransform = GetComponentInParent<Transform>();
+
     }
 
     private void Update()
@@ -69,7 +73,13 @@ public class DucklingBehaviour : MonoBehaviour
         //if duckling is on screen > move the image to the screen position of the world point above the ducklings head
         //if duckling is OFF screen > move the image to the screen position closest to the world point position of the duckling
 
+    }
 
+    private void LateUpdate()
+    {
+        float normalizedEulerAngle = Mathf.InverseLerp(0f, 360f, _ducklingTransform.rotation.eulerAngles.y);
+
+        _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
 
     }
 
@@ -77,23 +87,13 @@ public class DucklingBehaviour : MonoBehaviour
     {
         print("OnTriggerEnter Called on: " + this.gameObject.name);
 
-        if(other.TryGetComponent<DuckMovement>(out DuckMovement duckPlayer) &&
-            _isLost)
+        if(other.TryGetComponent<DuckMovement>(out DuckMovement duckPlayer) && _isLost)
         {
+            _isLost = false;
+            duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
 
-            if (_hasPatternChallenge)
-            {
-                //StartPatternChallenge(duckPlayer);
+            _ducklingAttractionCollider.enabled = false;
 
-            }
-            else
-            {
-                _isLost = false;
-                duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
-
-                _ducklingAttractionCollider.enabled = false;
-
-            }
         }
     }
 

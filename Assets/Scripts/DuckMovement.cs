@@ -93,7 +93,7 @@ public class DuckMovement : MonoBehaviour
         float normalizedEulerAngle = Mathf.InverseLerp(0f, 360f, transform.rotation.eulerAngles.y);
 
         //use the player ducks transform to get paramaters we need for the animator (moveX and moveY)
-        Debug.Log("Player duck normalized euler angle:  " + normalizedEulerAngle);
+        //Debug.Log("Player duck normalized euler angle:  " + normalizedEulerAngle);
 
         _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
 

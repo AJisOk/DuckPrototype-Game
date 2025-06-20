@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 951540645708601686}
   - component: {fileID: 236560466280413519}
   - component: {fileID: 3202593292056217432}
+  - component: {fileID: 1468040461526106963}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -444,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 4041824811601172268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -494,7 +495,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 9868490d60c672948a9f3d8eac26e9e4, type: 3}
+  m_Sprite: {fileID: 916404231, guid: e053795969e8ed9428f77e3090d6476c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -517,6 +518,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5857f9c3caf0a4f4e82350a8de06c8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1468040461526106963
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041824811601172268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6c9c6c20e651d840bb6a2a8154b2265, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4047751403712401938
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +982,8 @@ MonoBehaviour:
   _lostImageRectTransform: {fileID: 7572246532598729891}
   _offScreenBufferDistanceX: 120
   _offScreenBufferDistanceY: 70
-  _hasPatternChallenge: 0
+  _spriteAnimator: {fileID: 1468040461526106963}
+  _ducklingTransform: {fileID: 251128115254465397}
   _patternChallengeHandler: {fileID: 0}
 --- !u!135 &1518867844859183381
 SphereCollider:
