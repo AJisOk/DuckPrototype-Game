@@ -49,6 +49,6 @@ MonoBehaviour:
   UpdateMethod: 0
   Targets:
   - Object: {fileID: 0}
-    Weight: 4
+    Weight: 2
     Radius: 0
   m_LegacyTargets: []
