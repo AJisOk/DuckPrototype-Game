@@ -8,6 +8,9 @@ public class Pullable : MonoBehaviour
     [SerializeField] protected Material _grabbedMaterial;
     [SerializeField] protected int _weightValue = 0;
     [SerializeField] protected TextMeshProUGUI _debugWeightText;
+    [SerializeField] protected Collider _popupTrigger;
+    [SerializeField] protected CanvasGroup _popupCanvasGroup;
+
 
     private Material _defaultMaterial;
     private bool _isTargeted = false;
@@ -26,7 +29,7 @@ public class Pullable : MonoBehaviour
             _defaultMaterial = _meshRenderer.material;
         }
 
-        if(_debugWeightText != null) _debugWeightText.text = _weightValue.ToString();
+        if(_debugWeightText != null) _debugWeightText.text = "0/" + _weightValue.ToString();
     }
 
 
@@ -41,6 +44,22 @@ public class Pullable : MonoBehaviour
         if (IsGrabbed) _meshRenderer.material = _defaultMaterial;
         _isTargeted = false;
         _fixedJoint.connectedBody = null;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer != _duckLayer) return;
+        DuckMovement playerDuck = other.gameObject.GetComponent<DuckMovement>();
+        _debugWeightText.text = playerDuck.PullingStrength.ToString() + "/" + _weightValue.ToString();
+
+        _popupCanvasGroup.alpha = 1f;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer != _duckLayer) return;
+
+        _popupCanvasGroup.alpha = 0f;
     }
 
     private void OnCollisionEnter(Collision collision)

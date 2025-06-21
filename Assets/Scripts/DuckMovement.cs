@@ -173,7 +173,7 @@ public class DuckMovement : MonoBehaviour
         RaycastHit hit;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, _pullableLayerMask))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, _pullableLayerMask, QueryTriggerInteraction.Ignore))
         {
             print("pullable clicked on");
 
