@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
+
 
 public class DuckQuackHandler : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class DuckQuackHandler : MonoBehaviour
     [SerializeField] protected AnimationCurve _quackAnimCurve;
     [SerializeField] protected CanvasGroup _quackCG;
     [SerializeField] protected float _quackAnimDuration = 1f;
+    [SerializeField] protected EventReference _duckQuackSound;
 
     private bool _isQuacking = false;
 
@@ -65,6 +68,7 @@ public class DuckQuackHandler : MonoBehaviour
         float timer = 0f;
 
         //FOR BRIAN player duck quacks here
+        RuntimeManager.PlayOneShot(_duckQuackSound);
 
         while (timer < _quackAnimDuration)
         {

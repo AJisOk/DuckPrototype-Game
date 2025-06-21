@@ -6,7 +6,7 @@ public class TargetGroupAreaToFrame : MonoBehaviour
     [SerializeField] protected CinemachineTargetGroup _targetGroup;
     [SerializeField] protected float _areaTGWeight = 1f;
     [SerializeField] protected float _areaTGRadius = 10f;
-
+    //[SerializeField] protected FMODUnity.EventReference _musicSound;
 
     private Collider _areaTrigger;
     private DuckMovement _duckMovement;
@@ -24,7 +24,6 @@ public class TargetGroupAreaToFrame : MonoBehaviour
         {
             //duck entered area > add desired area to frame
             _targetGroup.AddMember(transform, _areaTGWeight, _areaTGRadius);
-
 
         }
     }

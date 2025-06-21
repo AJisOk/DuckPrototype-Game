@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 3635842771388224077}
   m_Layer: 7
   m_Name: DuckPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,6 +428,13 @@ MonoBehaviour:
     m_RotationOrder: 4
   _quackCG: {fileID: 402656216516705517}
   _quackAnimDuration: 2
+  _duckQuackSound:
+    Guid:
+      Data1: -1645695513
+      Data2: 1316558813
+      Data3: 1160565391
+      Data4: 206816708
+    Path: event:/SFX/Quack
 --- !u!1 &3751843867403416825
 GameObject:
   m_ObjectHideFlags: 0

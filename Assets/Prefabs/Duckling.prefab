@@ -1241,6 +1241,13 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _spottedCG: {fileID: 4421396435244022988}
+  _ducklingQuackSound:
+    Guid:
+      Data1: -348508036
+      Data2: 1149537729
+      Data3: -646854488
+      Data4: -1709861656
+    Path: event:/SFX/Quack Response
   _patternChallengeHandler: {fileID: 0}
 --- !u!135 &1518867844859183381
 SphereCollider:

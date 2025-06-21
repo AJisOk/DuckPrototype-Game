@@ -4,7 +4,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
-
+using FMODUnity;
 public class DucklingBehaviour : MonoBehaviour
 {
     //when duck gets close enouhg, check if anything in between duckling and duck, if not, start following duck
@@ -25,6 +25,7 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected float _spottedAnimDuration;
     [SerializeField] protected AnimationCurve _spottedAnimCurve;
     [SerializeField] protected CanvasGroup _spottedCG;
+    [SerializeField] protected EventReference _ducklingQuackSound;
 
     //[SerializeField] protected bool _hasPatternChallenge = false;
 
@@ -177,6 +178,7 @@ public class DucklingBehaviour : MonoBehaviour
         _isQuacking = true;
 
         //FOR BRIAN duckling quacking when not collected here
+        RuntimeManager.PlayOneShot(_ducklingQuackSound);
 
         while (timer <= _lostQuackAnimDuration)
         {
@@ -198,6 +200,7 @@ public class DucklingBehaviour : MonoBehaviour
         _isQuacking = true;
 
         //FOR BRIAN duckling quacking when IS collected here
+        RuntimeManager.PlayOneShot(_ducklingQuackSound);
 
         while (timer <= _happyQuackAnimDuration)
         {
