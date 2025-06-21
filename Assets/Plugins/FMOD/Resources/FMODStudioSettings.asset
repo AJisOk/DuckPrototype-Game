@@ -380,8 +380,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMODProject/Duck Prototype/Duck Prototype.fspro
-  sourceBankPath: FMODProject/Duck Prototype/Build
+  sourceProjectPath: FMOD/Duck Prototype.fspro
+  sourceBankPath: FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
