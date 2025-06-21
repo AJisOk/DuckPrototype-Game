@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6ebeb704-4e18-4162-bc94-8971f5e23d31}">
+		<property name="assetPath">
+			<value>Music/Wandering Chords v1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>27</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9fe2a7c8-2f13-4835-95ae-861b5126ca2c}</destination>
+		</relationship>
+	</object>
+</objects>
