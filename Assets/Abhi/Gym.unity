@@ -751,6 +751,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.45800003, z: 1.8770001}
   m_TimeToStationary: 0.5
+--- !u!225 &346794791 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1115431615762551172, guid: ff182bd23027b6d4ea111b76a9bbf72f, type: 3}
+  m_PrefabInstance: {fileID: 533948398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,10 +3934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duck
       objectReference: {fileID: 0}
-    - target: {fileID: 7161702867312113651, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_Camera
+    - target: {fileID: 5232859548427787283, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _debugMenuCG
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 346794791}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3943,6 +3948,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
+  - {fileID: 931119488}
   - {fileID: 69832240}
   - {fileID: 67717880}
   - {fileID: 1595428456}
@@ -3969,6 +3975,5 @@ SceneRoots:
   - {fileID: 853427156}
   - {fileID: 809145550}
   - {fileID: 1107888037}
-  - {fileID: 931119488}
   - {fileID: 961131189}
   - {fileID: 533948398}
