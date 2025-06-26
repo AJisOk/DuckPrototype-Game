@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,16 +10,24 @@ public class Grabable : MonoBehaviour
     [SerializeField] protected Collider _grabRangeTrigger;
     [SerializeField] protected int _duckLayer = 7;
     [SerializeField] protected CanvasGroup _popupCanvasGroup;
+    [SerializeField] protected Material _grabbedMaterial;
 
     private bool _isTargeted = false;
     private bool _isHighlighted = false;
     private bool _isGrabbed = false;
+    private bool _isPlayerNearby = false;
+
+    private DuckCharacterController _characterController;
+    private MeshRenderer _renderer;
+    private Material _defaultMaterial;
 
     public UnityEvent OnGrabbed;
+    public bool IsPlayerNearby { get => _isPlayerNearby; }
 
     private void Awake()
     {
-        
+        _renderer = GetComponent<MeshRenderer>();
+        _defaultMaterial = _renderer.material;
     }
 
     public void OnTarget()
@@ -49,13 +58,21 @@ public class Grabable : MonoBehaviour
         if (!_isTargeted) return;
         
         _isGrabbed = true;
-        OnGrabbed.Invoke();
+        //OnGrabbed.Invoke();
+
+        _renderer.material = _grabbedMaterial;
+
+        Debug.Log("TryGrab called on Grabable");
     }
 
     public void TryUnGrab()
     {
         if (!_isTargeted) return;
         _isGrabbed = false;
+
+        _renderer.material = _defaultMaterial;
+
+        Debug.Log("TryUnGrab Called on Grabable");
     }
 
     private void OnMouseEnter()
@@ -70,15 +87,21 @@ public class Grabable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         //K+GP > if is highlighted, grabable becomes targeted
         //M > if targeted, grabable is grabbed by player
 
         if (other.gameObject.layer != _duckLayer) return;
 
+        _isPlayerNearby = true;
+
+        _characterController = other.gameObject.GetComponent<DuckCharacterController>();
+
         if (_isTargeted)
         {
             //Grab object
-            TryGrab();
+            //TryGrab();
+            _characterController.Grab();
             //return
             return;
         }
@@ -86,7 +109,8 @@ public class Grabable : MonoBehaviour
         if(_isHighlighted)
         {
             //target object
-            OnTarget();
+            //OnTarget();
+            _characterController.OnTargetGrabable(this);
             //return
             return;
         }
@@ -95,11 +119,21 @@ public class Grabable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //k+GP > if targeted - untarget
+        //k+GP > if targeted > untarget
         //M > same
         
         if (other.gameObject.layer != _duckLayer) return;
 
-        if(_isTargeted) OnUntarget();
+        _isPlayerNearby = false;
+
+        if (_isGrabbed) _characterController.UnGrab();
+
+        if(_isTargeted)
+        {
+            _characterController.OnUntargetCurrentGrabable(this);  
+            //OnUntarget();
+        }
+        
+
     }
 }
