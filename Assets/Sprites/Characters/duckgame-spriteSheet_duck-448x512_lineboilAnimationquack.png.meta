@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,24 +37,24 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,12 +108,1178 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: playerDuckDown1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63396018a19a40843a80bb7a07f02cf2
+      internalID: 1856743291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2d6d53cc5cb87498d8d1cfb2b7abd2
+      internalID: -69615804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b42f896f668944393475058a2e1662
+      internalID: -2136043617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5c1fc0d136bb44aaf5fdc3ffe34d8a
+      internalID: -1004688421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253f965f12378b048b56942c876e75b0
+      internalID: 761077939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19df66ad4553f7c46a19fa748e9d7dca
+      internalID: -1573524001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c18f835502b2c4587ecc9ff14eb15c
+      internalID: -1587208062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDown8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 3072
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c91d6ed947e294d8e335979eb2d96b
+      internalID: -1595210540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8406be9a941897541aff13ed7d71d254
+      internalID: -77387509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a729241debfb06848a1bda43f5965ec6
+      internalID: 889183867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1724b13db14b0242bd6687dffc29417
+      internalID: -1850143838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25079b6ea9e15541ab8c4827afc8078
+      internalID: 198591422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b20c5c94b173c74181d1d9e73c98cc9
+      internalID: 261513619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2d4355208bad441bbe75296cc8a792
+      internalID: -227270425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b3885b6d0487c478d93fa1d7c76a7f
+      internalID: 1755239421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUp8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 2560
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbacf681a0fe97849b724a6a31424d17
+      internalID: 235461989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b982ed225e129354286d05c1b4211eff
+      internalID: 2084886907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7f9e542a5b90a4c9654b111f39e157
+      internalID: 751827713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822b544d03d736343a640d0e0c3c1199
+      internalID: 1153288319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3063393ae3e6c43a857d8df60961ca
+      internalID: 1229195434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545ca78ea5e908d4aac3249d314d2a42
+      internalID: 654037922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f55dbfe8271ec847a3f208fc516626d
+      internalID: -604781470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6cd7540b5369340836bee554423cb5
+      internalID: -1975511811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRight8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec6a99b35e45114d844e7336b8dc754
+      internalID: 535566873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b975a34755058034998d96293536cf50
+      internalID: -1531325300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656942ebbe074f044a0713bcee31effc
+      internalID: -1854062465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b761ec26c384fa46954b40400f1609a
+      internalID: -1329212459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83eaf316925f8664caf34c4dfd72ccdb
+      internalID: 967294082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3857c3264893a844d91516f72bed1fa2
+      internalID: -1602594528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a46af4095193844c81293622f4a1b99
+      internalID: 986715133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2fa445220251e4ea88bb4c717af5ab
+      internalID: -1210382596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRight8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c96a93e060ba5145a0da881cadade36
+      internalID: -1568991871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b780a16c4ee2a2744b1309658d87ab31
+      internalID: -687634953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b9c28250017a84a81429380151ab5e
+      internalID: 585619990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7a8595687356543b41f496c2b14f40
+      internalID: -107714727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dfacbc787f6c2e4c9f680200b834d1b
+      internalID: -435107873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48e53465b65c39419c1bb76948726cd
+      internalID: -2122767602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cd8685ac54bc544a186e8df0b1256f
+      internalID: 507931712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0519c6b567d5819408cbd2d66ea86cfb
+      internalID: 571156784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRight8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3520a3e3bddef354b84a1dd682a065e9
+      internalID: 1314527011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRightQuack1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4da905ea88f9a945ae9c0b19acd0828
+      internalID: -92359277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRightQuack2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c92580e8be82044fb45310f80f2a2b6
+      internalID: -450556017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckUpRightQuack3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eafc7ff2a91e430448dbb31237204300
+      internalID: -1823848181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duckgame-spriteSheet_duck-448x512_lineboilAnimationquack_43
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76385da2438db94b94d452fc5b3625a
+      internalID: -1779138337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRightQuack1
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45725df1349fedf438b9f71194ec0095
+      internalID: -1243961551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRightQuack2
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455d54d679b658b48a5a1863d599a253
+      internalID: 96563662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownRightQuack3
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f64310f87179c9409cc7e9345aa58c2
+      internalID: -887772811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownQuack1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943be09e075b5d447af53a89b9ffa245
+      internalID: -2002558987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownQuack2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507985c08ad2ee0409ca08944182cd41
+      internalID: 1197414421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckDownQuack3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a76ef5238e7235458b2e57cb4ce96fe
+      internalID: 1315124317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRightQuack1
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9a053db4c76a749903a9c81af21de8
+      internalID: -1832906736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRightQuack2
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4de319c61152440a8b9e38abc90a6e
+      internalID: -2142125765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDuckRightQuack3
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d56b7fc7661404fb319acaf910ecc2
+      internalID: 2134899015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fe4d12d41b56238489a277da7a5d1bf3
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +1288,60 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      duckgame-spriteSheet_duck-448x512_lineboilAnimationquack_43: -1779138337
+      playerDuckDown1: 1856743291
+      playerDuckDown2: -69615804
+      playerDuckDown3: -2136043617
+      playerDuckDown4: -1004688421
+      playerDuckDown5: 761077939
+      playerDuckDown6: -1573524001
+      playerDuckDown7: -1587208062
+      playerDuckDown8: -1595210540
+      playerDuckDownQuack1: -2002558987
+      playerDuckDownQuack2: 1197414421
+      playerDuckDownQuack3: 1315124317
+      playerDuckDownRight1: -1531325300
+      playerDuckDownRight2: -1854062465
+      playerDuckDownRight3: -1329212459
+      playerDuckDownRight4: 967294082
+      playerDuckDownRight5: -1602594528
+      playerDuckDownRight6: 986715133
+      playerDuckDownRight7: -1210382596
+      playerDuckDownRight8: -1568991871
+      playerDuckDownRightQuack1: -1243961551
+      playerDuckDownRightQuack2: 96563662
+      playerDuckDownRightQuack3: -887772811
+      playerDuckRight1: -687634953
+      playerDuckRight2: 585619990
+      playerDuckRight3: -107714727
+      playerDuckRight4: -435107873
+      playerDuckRight5: -2122767602
+      playerDuckRight6: 507931712
+      playerDuckRight7: 571156784
+      playerDuckRight8: 1314527011
+      playerDuckRightQuack1: -1832906736
+      playerDuckRightQuack2: -2142125765
+      playerDuckRightQuack3: 2134899015
+      playerDuckUp1: -77387509
+      playerDuckUp2: 889183867
+      playerDuckUp3: -1850143838
+      playerDuckUp4: 198591422
+      playerDuckUp5: 261513619
+      playerDuckUp6: -227270425
+      playerDuckUp7: 1755239421
+      playerDuckUp8: 235461989
+      playerDuckUpRight1: 2084886907
+      playerDuckUpRight2: 751827713
+      playerDuckUpRight3: 1153288319
+      playerDuckUpRight4: 1229195434
+      playerDuckUpRight5: 654037922
+      playerDuckUpRight6: -604781470
+      playerDuckUpRight7: -1975511811
+      playerDuckUpRight8: 535566873
+      playerDuckUpRightQuack1: -92359277
+      playerDuckUpRightQuack2: -450556017
+      playerDuckUpRightQuack3: -1823848181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
