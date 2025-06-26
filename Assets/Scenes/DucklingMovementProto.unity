@@ -537,8 +537,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _rigidbody: {fileID: 828875559}
-  _speed: 5
-  _acceleration: 10
+  _speed: 4
+  _acceleration: 4
+  _turnSpeed: 4
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -641,69 +642,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5851700563715445694, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
   m_PrefabInstance: {fileID: 9015818970547799675}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1591392182
+--- !u!1 &1591392182 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6426267159999517838, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+  m_PrefabInstance: {fileID: 3597768351406786341}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1591392184}
-  - component: {fileID: 1591392183}
-  m_Layer: 0
-  m_Name: TempMusicManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1591392183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591392182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1248618707
-      Data2: 1216836260
-      Data3: -1514316115
-      Data4: 676049924
-    Path: event:/Ambience/Ambience
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!4 &1591392184
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591392182}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1732002157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +965,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1586,6 +1529,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff182bd23027b6d4ea111b76a9bbf72f, type: 3}
+--- !u!1001 &3597768351406786341
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6426267159999517838, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_Name
+      value: TempMusicManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651152006234580834, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
 --- !u!1001 &3775632794884600055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2241,7 +2241,7 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: e01663682fbec324b9b27d3bc800f8be, type: 3}
     - target: {fileID: 7161702867312113651, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Keyboard
+      value: Gamepad
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
@@ -2274,5 +2274,5 @@ SceneRoots:
   - {fileID: 3177851166369841201}
   - {fileID: 6991157682168153005}
   - {fileID: 1732002160}
-  - {fileID: 1591392184}
+  - {fileID: 3597768351406786341}
   - {fileID: 1890890398}

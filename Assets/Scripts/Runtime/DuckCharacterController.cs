@@ -129,12 +129,16 @@ public class DuckCharacterController : MonoBehaviour
     {
         //check if there is a target grabable and its in range
         //if true
+        if(_currentTargetGrabable == null) return;
+
         Grab();
     }
     
     private void OnTryRelease(InputValue inputValue)
     {
+        if (!_isGrabbing) return;
 
+        UnGrab();
     }
 
     private void OnQuack(InputValue inputValue)

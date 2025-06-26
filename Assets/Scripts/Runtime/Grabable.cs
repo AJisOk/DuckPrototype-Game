@@ -94,6 +94,7 @@ public class Grabable : MonoBehaviour
         if (other.gameObject.layer != _duckLayer) return;
 
         _isPlayerNearby = true;
+        _isHighlighted = true;
 
         _characterController = other.gameObject.GetComponent<DuckCharacterController>();
 
@@ -125,6 +126,7 @@ public class Grabable : MonoBehaviour
         if (other.gameObject.layer != _duckLayer) return;
 
         _isPlayerNearby = false;
+        _isHighlighted = false;
 
         if (_isGrabbed) _characterController.UnGrab();
 
