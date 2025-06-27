@@ -29,6 +29,8 @@ public class DucklingBehaviour : MonoBehaviour
 
     //[SerializeField] protected bool _hasPatternChallenge = false;
 
+    public bool IsLost { get => _isLost; }
+
     [Header("Pattern Challenge")]
     [SerializeField] protected PatternChallengeHandler _patternChallengeHandler;
 
@@ -123,7 +125,13 @@ public class DucklingBehaviour : MonoBehaviour
         StartCoroutine(PlayerDuckSpotted());
     }
 
-    public void TryQuack()
+    public void TryFocusedQuack()
+    {
+        if (_isQuacking) return;
+        StartCoroutine(LostQuackAnim());
+    }
+
+    public void TryMutedQuack()
     {
         if (_isLost)
         {
@@ -137,7 +145,8 @@ public class DucklingBehaviour : MonoBehaviour
             }
 
             //StopCoroutine(LostQuackAnim());
-            StartCoroutine(LostQuackAnim());
+            StartCoroutine(MutedLostQuackAnim());
+
         }
         else
         {
@@ -153,6 +162,38 @@ public class DucklingBehaviour : MonoBehaviour
             StartCoroutine(HappyQuackAnim());
         }
     }
+
+    //old original quack function
+    //public void TryQuack()
+    //{
+    //    if (_isLost)
+    //    {
+    //        //play sound and trigger ui
+    //        if (_isQuacking)
+    //        {
+    //            //StopCoroutine(LostQuackAnim());
+    //            //_isQuacking = false;
+    //            //_lostQuackCG.alpha = 0f;
+    //            return;
+    //        }
+
+    //        //StopCoroutine(LostQuackAnim());
+    //        StartCoroutine(LostQuackAnim());
+    //    }
+    //    else
+    //    {
+    //        //play kinder sound and animation
+    //        if (_isQuacking)
+    //        {
+    //            //StopCoroutine(HappyQuackAnim());
+    //            //_isQuacking = false;
+    //            //_happyQuackCG.alpha = 0f;
+    //            return;
+    //        }
+
+    //        StartCoroutine(HappyQuackAnim());
+    //    }
+    //}
 
     private IEnumerator PlayerDuckSpotted()
     {
@@ -177,7 +218,7 @@ public class DucklingBehaviour : MonoBehaviour
         float timer = 0f;
         _isQuacking = true;
 
-        //FOR BRIAN duckling quacking when not collected here
+        //FOR BRIAN duckling quack wehn it is closest to the player
         RuntimeManager.PlayOneShot(_ducklingQuackSound);
 
         while (timer <= _lostQuackAnimDuration)
@@ -190,6 +231,30 @@ public class DucklingBehaviour : MonoBehaviour
         }
 
         _lostQuackCG.alpha = 0f;
+        _isQuacking = false;
+        yield return null;
+    }
+
+    private IEnumerator MutedLostQuackAnim()
+    {
+        yield return new WaitForSeconds(_lostQuackAnimDelay);
+
+        //float timer = 0f;
+        _isQuacking = true;
+
+        //FOR BRIAN queiter duckling quack for when its not the closest to the player
+        RuntimeManager.PlayOneShot(_ducklingQuackSound);
+
+        //while (timer <= _lostQuackAnimDuration)
+        //{
+        //    _lostQuackCG.alpha = _quackAnimCurve.Evaluate(timer);
+
+        //    timer += Time.deltaTime;
+
+        //    yield return null;
+        //}
+
+        //_lostQuackCG.alpha = 0f;
         _isQuacking = false;
         yield return null;
     }

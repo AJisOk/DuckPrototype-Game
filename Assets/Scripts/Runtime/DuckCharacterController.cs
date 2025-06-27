@@ -17,6 +17,7 @@ public class DuckCharacterController : MonoBehaviour
     [Header("Components")]
     [SerializeField] protected NavMeshAgent _duckAgent;
     [SerializeField] protected Animator _spriteAnimator;
+    [SerializeField] protected DuckQuackHandler _quackHandler;
 
     [Header("Movement")]
     [SerializeField] protected LayerMask _moveToLayerMask;
@@ -79,7 +80,9 @@ public class DuckCharacterController : MonoBehaviour
         //calculate movement for keyboard+controller
         _duckAgent.nextPosition = _rigidbody.transform.position;
         
-        SetLookDirection(_moveInput);
+        if(_isGrabbing) SetLookDirection((_currentTargetGrabable.transform.position - transform.position).normalized);
+        else SetLookDirection(_moveInput);
+
 
         Vector3 targetVelocity = _moveInput * _speed;
 
@@ -143,7 +146,7 @@ public class DuckCharacterController : MonoBehaviour
 
     private void OnQuack(InputValue inputValue)
     {
-         
+        _quackHandler.Quack();
     }
 
     private void OnMove(InputValue inputValue)

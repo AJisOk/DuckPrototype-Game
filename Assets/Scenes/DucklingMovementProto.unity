@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _duckAgent: {fileID: 828875553}
   _spriteAnimator: {fileID: 1447200959}
+  _quackHandler: {fileID: 828875560}
   _moveToLayerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -554,6 +555,17 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
   m_PrefabInstance: {fileID: 9015818970547799675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &828875560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3635842771388224077, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+  m_PrefabInstance: {fileID: 9015818970547799675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92111763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa73c776827c31498acd8edce22dece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!225 &848542298 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 1115431615762551172, guid: ff182bd23027b6d4ea111b76a9bbf72f, type: 3}
@@ -2215,8 +2227,8 @@ PrefabInstance:
       propertyPath: _patternChallengeActionMap.m_Bindings.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3498161376642850839, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_AutoBraking
+    - target: {fileID: 3635842771388224077, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _allDucklingsQuack
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}

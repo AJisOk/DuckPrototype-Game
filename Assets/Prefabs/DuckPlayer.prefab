@@ -354,7 +354,7 @@ MonoBehaviour:
   _prefabToInstantiate: {fileID: 9065315246283202652, guid: a1033e5331d158d40bb6e6024591e6b3, type: 3}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 512
 --- !u!114 &5232859548427787283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,8 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa73c776827c31498acd8edce22dece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ducklingsTagText: Duckling
-  _allDucklingsQuack: 1
+  _ducklingsTag: Duckling
   _ducklingQuackRange: 50
   _quackAnimCurve:
     serializedVersion: 2
@@ -427,7 +426,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _quackCG: {fileID: 402656216516705517}
-  _quackAnimDuration: 2
+  _quackAnimDuration: 1
   _duckQuackSound:
     Guid:
       Data1: -1645695513
@@ -435,6 +434,7 @@ MonoBehaviour:
       Data3: 1160565391
       Data4: 206816708
     Path: event:/SFX/Quack
+  _listenerTriggerRange: 20
 --- !u!1 &3751843867403416825
 GameObject:
   m_ObjectHideFlags: 0
