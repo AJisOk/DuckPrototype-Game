@@ -52,8 +52,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 1
-    - _Strength: 0.16
-    - _WaveSpeed: 25
+    - _Strength: 0.1
+    - _WaveSpeed: 1000
     m_Colors:
     - _DeepWaterColor: {r: 0.06674972, g: 0.7545371, b: 0.9433962, a: 0.7843137}
     - _ShallowWaterColor: {r: 1, g: 1, b: 1, a: 1}
