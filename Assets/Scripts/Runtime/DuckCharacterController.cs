@@ -25,6 +25,7 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected float _speed = 5f;
     [SerializeField] protected float _acceleration = 10f;
     [SerializeField] protected float _turnSpeed = 5f;
+    [SerializeField] protected float _stoppingDistance = .2f;
     //[SerializeField] protected bool _mouseMovement = false;
 
     [Header("Camera")]
@@ -58,7 +59,10 @@ public class DuckCharacterController : MonoBehaviour
     private bool _hasTurnInput = false;
 
     public int DucklingsFollowingCount { get => _ducklingsFollowing.Count; }
-    public bool IsMoving { get => _rigidbody.GetPointVelocity(_rigidbody.transform.position).magnitude > 0.1f; }
+    public bool IsMoving
+    {
+        get => (_hasMoveInput || (_duckAgent.remainingDistance > _stoppingDistance && _duckAgent.isStopped == false));
+    }
 
     private void Awake()
     {
@@ -305,7 +309,7 @@ public class DuckCharacterController : MonoBehaviour
         _ducklingNextFollowPositions.Insert(0, _duckAgent.transform.position);
         if (_ducklingNextFollowPositions.Count > _ducklingsFollowing.Count) _ducklingNextFollowPositions.RemoveAt(_ducklingsFollowing.Count);
 
-        Debug.Log(_rigidbody.GetPointVelocity(_rigidbody.transform.position).magnitude);
+        Debug.Log(IsMoving);
 
         if (!IsMoving) return;
 
