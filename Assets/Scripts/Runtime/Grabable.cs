@@ -12,60 +12,60 @@ public class Grabable : MonoBehaviour
     [SerializeField] protected CanvasGroup _popupCanvasGroup;
     [SerializeField] protected Material _grabbedMaterial;
 
-    private bool _isTargeted = false;
-    private bool _isHighlighted = false;
-    private bool _isGrabbed = false;
-    private bool _isPlayerNearby = false;
+    protected bool _isTargeted = false;
+    protected bool _isHighlighted = false;
+    protected bool _isGrabbed = false;
+    protected bool _isPlayerNearby = false;
 
-    private DuckCharacterController _characterController;
-    private MeshRenderer _renderer;
-    private Material _defaultMaterial;
+    protected DuckCharacterController _characterController;
+    protected MeshRenderer _renderer;
+    protected Material _defaultMaterial;
 
     public UnityEvent OnGrabbed;
     public bool IsPlayerNearby { get => _isPlayerNearby; }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _renderer = GetComponent<MeshRenderer>();
         _defaultMaterial = _renderer.material;
     }
 
-    public void OnTarget()
+    public virtual void OnTarget()
     {
         _isTargeted = true;
     }
 
-    public void OnUntarget()
+    public virtual void OnUntarget()
     {
         if(_isGrabbed) TryUnGrab();
         _isTargeted = false;
     }
 
-    public void OnHighlight()
+    public virtual void OnHighlight()
     {
         _isHighlighted = true;
         _popupCanvasGroup.alpha = 1f;
     }
 
-    public void OnUnhighlight()
+    public virtual void OnUnhighlight()
     {
         _isHighlighted = false;
         _popupCanvasGroup.alpha = 0f;
     }
 
-    public void TryGrab()
+    public virtual void TryGrab()
     {
         if (!_isTargeted) return;
         
         _isGrabbed = true;
-        //OnGrabbed.Invoke();
+        OnGrabbed.Invoke();
 
         _renderer.material = _grabbedMaterial;
 
         Debug.Log("TryGrab called on Grabable");
     }
 
-    public void TryUnGrab()
+    public virtual void TryUnGrab()
     {
         if (!_isTargeted) return;
         _isGrabbed = false;
@@ -75,17 +75,17 @@ public class Grabable : MonoBehaviour
         Debug.Log("TryUnGrab Called on Grabable");
     }
 
-    private void OnMouseEnter()
+    protected virtual void OnMouseEnter()
     {
         OnHighlight();
     }
 
-    private void OnMouseExit()
+    protected virtual void OnMouseExit()
     {
         OnUnhighlight();
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
 
         //K+GP > if is highlighted, grabable becomes targeted
@@ -118,7 +118,7 @@ public class Grabable : MonoBehaviour
 
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         //k+GP > if targeted > untarget
         //M > same

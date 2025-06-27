@@ -95,6 +95,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "6bcaca14-3a75-40cd-b711-5121a440158b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Quack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "ArrowKeys",
                     "id": "8f1aae00-900e-4a77-b61b-652ecef2a24a",
                     "path": "2DVector",
