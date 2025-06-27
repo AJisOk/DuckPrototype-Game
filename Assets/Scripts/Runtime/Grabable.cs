@@ -17,9 +17,10 @@ public class Grabable : MonoBehaviour
     protected bool _isGrabbed = false;
     protected bool _isPlayerNearby = false;
 
-    protected DuckCharacterController _characterController;
+    protected DuckCharacterController _playerDuckController;
     protected MeshRenderer _renderer;
     protected Material _defaultMaterial;
+    protected Rigidbody _rigidbody;
 
     public UnityEvent OnGrabbed;
     public bool IsPlayerNearby { get => _isPlayerNearby; }
@@ -28,6 +29,7 @@ public class Grabable : MonoBehaviour
     {
         _renderer = GetComponent<MeshRenderer>();
         _defaultMaterial = _renderer.material;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     public virtual void OnTarget()
@@ -62,7 +64,7 @@ public class Grabable : MonoBehaviour
 
         _renderer.material = _grabbedMaterial;
 
-        Debug.Log("TryGrab called on Grabable");
+        //Debug.Log("TryGrab called on Grabable");
     }
 
     public virtual void TryUnGrab()
@@ -72,7 +74,7 @@ public class Grabable : MonoBehaviour
 
         _renderer.material = _defaultMaterial;
 
-        Debug.Log("TryUnGrab Called on Grabable");
+        //Debug.Log("TryUnGrab Called on Grabable");
     }
 
     protected virtual void OnMouseEnter()
@@ -96,13 +98,13 @@ public class Grabable : MonoBehaviour
         _isPlayerNearby = true;
         _isHighlighted = true;
 
-        _characterController = other.gameObject.GetComponent<DuckCharacterController>();
+        _playerDuckController = other.gameObject.GetComponent<DuckCharacterController>();
 
         if (_isTargeted)
         {
             //Grab object
             //TryGrab();
-            _characterController.Grab();
+            _playerDuckController.Grab();
             //return
             return;
         }
@@ -111,7 +113,7 @@ public class Grabable : MonoBehaviour
         {
             //target object
             //OnTarget();
-            _characterController.OnTargetGrabable(this);
+            _playerDuckController.OnTargetGrabable(this);
             //return
             return;
         }
@@ -128,13 +130,13 @@ public class Grabable : MonoBehaviour
         _isPlayerNearby = false;
         _isHighlighted = false;
 
-        if (_isGrabbed) _characterController.UnGrab();
+        //if (_isGrabbed) _playerDuckController.UnGrab();
 
-        if(_isTargeted)
-        {
-            _characterController.OnUntargetCurrentGrabable(this);  
-            //OnUntarget();
-        }
+        //if(_isTargeted)
+        //{
+        //    _playerDuckController.OnUntargetCurrentGrabable(this);  
+        //    //OnUntarget();
+        //}
         
 
     }

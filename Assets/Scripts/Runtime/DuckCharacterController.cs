@@ -112,6 +112,8 @@ public class DuckCharacterController : MonoBehaviour
 
         _rigidbody.AddForce(acceleration);
 
+
+
         _timer += Time.deltaTime;
         if (_timer >= _ducklingFollowIntervalTime) UpdateDucklingFollowPositions();
 
