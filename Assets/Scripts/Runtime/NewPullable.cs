@@ -58,6 +58,8 @@ public class NewPullable : Grabable
         //old grabbing mechanic
         _fixedJoint.connectedBody = _duckRB;
 
+        //if (_ducklingsRequiredToPull > 0) _playerDuckController.DucklingsSwarmPullable();
+
         //_isBeingPulled = true;
 
     }
@@ -85,7 +87,7 @@ public class NewPullable : Grabable
     private void UnableToPull()
     {
         //tell character they cant pull this object
-
+        _playerDuckController.UnableToGrab();
     }
 
 }

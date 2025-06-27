@@ -129,8 +129,22 @@ public class DucklingBehaviour : MonoBehaviour
 
     public void MoveTo(Vector3 targetPosition)
     {
-        Debug.Log("moveto called on duckling");
         _navMeshAgent.SetDestination(targetPosition);
+
+        Vector3 facingDircetion = (targetPosition - transform.position).normalized;
+
+        transform.rotation = Quaternion.LookRotation(facingDircetion);
+    }
+
+    public void MoveToGrabable(Vector3 targetPosition, Vector3 facingTarget)
+    {
+        _navMeshAgent.SetDestination(targetPosition);
+        if(_navMeshAgent.remainingDistance < .5f)
+        {
+            Vector3 facingDirection = (facingTarget - transform.position).normalized;
+
+            transform.rotation = Quaternion.LookRotation(facingDirection);
+        }
     }
 
     private void OnDucklingFirstSpotted()

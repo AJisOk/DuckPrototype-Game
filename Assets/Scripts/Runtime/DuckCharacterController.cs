@@ -115,8 +115,12 @@ public class DuckCharacterController : MonoBehaviour
 
 
         _timer += Time.deltaTime;
-        if (_timer >= _ducklingFollowIntervalTime) UpdateDucklingFollowPositions();
+        if (_timer >= _ducklingFollowIntervalTime)
+        {
+            UpdateDucklingFollowPositions();
 
+            if (_isGrabbing) DucklingsSwarmGrabable();
+        }
 
     }
 
@@ -286,7 +290,9 @@ public class DuckCharacterController : MonoBehaviour
     {
         Debug.Log("Grab called on character controller");
         _isGrabbing = true;
-        _currentTargetGrabable.TryGrab();  
+        _currentTargetGrabable.TryGrab();
+
+
     }
 
     public void UnGrab()
@@ -294,6 +300,20 @@ public class DuckCharacterController : MonoBehaviour
         Debug.Log("UnGrab called on Character Controller");
         _isGrabbing = false;
         _currentTargetGrabable.TryUnGrab();
+    }
+
+    public void UnableToGrab()
+    {
+        UnGrab();
+    }
+
+    public void DucklingsSwarmGrabable()
+    {
+        for (int i = 0; i < _ducklingsFollowing.Count; i++)
+        {
+            _ducklingsFollowing[i].MoveToGrabable(_currentTargetGrabable.DucklingGrabTransforms[i].position,
+                _currentTargetGrabable.transform.position);
+        }
     }
 
     public void DucklingStartsFollowing(DucklingBehaviour ducklingToAdd)
@@ -311,9 +331,7 @@ public class DuckCharacterController : MonoBehaviour
         _ducklingNextFollowPositions.Insert(0, _duckAgent.transform.position);
         if (_ducklingNextFollowPositions.Count > _ducklingsFollowing.Count) _ducklingNextFollowPositions.RemoveAt(_ducklingsFollowing.Count);
 
-        Debug.Log(IsMoving);
-
-        if (!IsMoving) return;
+        if (!IsMoving || _isGrabbing) return;
 
         for (int i = 0; i < _ducklingsFollowing.Count; i++)
         {
