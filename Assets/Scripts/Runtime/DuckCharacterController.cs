@@ -1,12 +1,12 @@
 using System;
-using System.Net.Sockets;
 using System.Runtime.CompilerServices;
-using System.Security.Authentication.ExtendedProtection;
-using Unity.Collections.LowLevel.Unsafe;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Unity.Cinemachine;
 
 public class DuckCharacterController : MonoBehaviour
 {
@@ -27,13 +27,23 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected float _turnSpeed = 5f;
     //[SerializeField] protected bool _mouseMovement = false;
 
+    [Header("Camera")]
+    [SerializeField] protected CinemachineTargetGroup _targetGroup;
+    [SerializeField] protected float _ducklingTGWeight = 1f;
+    [SerializeField] protected float _ducklingTGRadius = 0f;
+
     [Header("Grabbing + Pulling")]
     [SerializeField] protected LayerMask _grabableLayerMask;
     [SerializeField] protected int _grabableLayerIndex;
 
+    [Header("Ducklings")]
+    [SerializeField] protected List<DucklingBehaviour> _ducklingsFollowing = new List<DucklingBehaviour>();
+    [SerializeField] protected float _ducklingFollowIntervalTime = .5f;
+
     //private variables
     private PlayerInput _playerInput;
 
+    private List<Vector3> _ducklingNextFollowPositions = new List<Vector3>();
     private Vector3 _moveToDestination;
     private Grabable _currentHighlightedGrabable = null;
     private Grabable _currentTargetGrabable = null;
@@ -41,12 +51,14 @@ public class DuckCharacterController : MonoBehaviour
     private Vector3 _localMoveInput;
     private Vector3 _lookDirection;
 
-
-    private bool _isMoving;
+    private float _timer = 0f;
     private bool _isGrabbing = false;
     private bool _canMove = true;
     private bool _hasMoveInput = false;
     private bool _hasTurnInput = false;
+
+    public int DucklingsFollowingCount { get => _ducklingsFollowing.Count; }
+    public bool IsMoving { get => _rigidbody.GetPointVelocity(_rigidbody.transform.position).magnitude > 0.1f; }
 
     private void Awake()
     {
@@ -89,9 +101,17 @@ public class DuckCharacterController : MonoBehaviour
         Vector3 velocityDiff = targetVelocity - _rigidbody.linearVelocity;
         velocityDiff.y = 0f;
 
+
         Vector3 acceleration = velocityDiff * _acceleration;
 
+        if (!_hasMoveInput) acceleration = Vector3.zero;
+
         _rigidbody.AddForce(acceleration);
+
+        _timer += Time.deltaTime;
+        if (_timer >= _ducklingFollowIntervalTime) UpdateDucklingFollowPositions();
+
+
     }
 
     private void OnMoveTo(InputValue inputValue)
@@ -268,5 +288,31 @@ public class DuckCharacterController : MonoBehaviour
         Debug.Log("UnGrab called on Character Controller");
         _isGrabbing = false;
         _currentTargetGrabable.TryUnGrab();
+    }
+
+    public void DucklingStartsFollowing(DucklingBehaviour ducklingToAdd)
+    {
+        _ducklingsFollowing.Add(ducklingToAdd);
+
+        _targetGroup.AddMember(ducklingToAdd.transform,_ducklingTGWeight, _ducklingTGRadius);
+    }
+
+    private void UpdateDucklingFollowPositions()
+    {
+        _timer = 0f;
+
+        //update duckling follow positions list
+        _ducklingNextFollowPositions.Insert(0, _duckAgent.transform.position);
+        if (_ducklingNextFollowPositions.Count > _ducklingsFollowing.Count) _ducklingNextFollowPositions.RemoveAt(_ducklingsFollowing.Count);
+
+        Debug.Log(_rigidbody.GetPointVelocity(_rigidbody.transform.position).magnitude);
+
+        if (!IsMoving) return;
+
+        for (int i = 0; i < _ducklingsFollowing.Count; i++)
+        {
+            _ducklingsFollowing[i].MoveTo(_ducklingNextFollowPositions[i]);
+        }
+
     }
 }

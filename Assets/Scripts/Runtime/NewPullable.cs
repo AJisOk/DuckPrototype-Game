@@ -1,5 +1,7 @@
+using NUnit.Framework.Constraints;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class NewPullable : Grabable
 {
@@ -8,6 +10,10 @@ public class NewPullable : Grabable
     [SerializeField, Range(0, 5)] protected int _ducklingsRequiredToPull;
 
     private Rigidbody _duckRB;
+
+    private bool _isBeingPulled = false;
+
+    public bool IsBeingPulled { get => _isBeingPulled; }
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -18,11 +24,23 @@ public class NewPullable : Grabable
 
     public override void TryGrab()
     {
+        if (!_isTargeted) return;
+
+        if (_characterController.DucklingsFollowingCount < _ducklingsRequiredToPull)
+        {
+            UnableToPull();
+            return;
+        }
+
         base.TryGrab();
 
         //check if player is strong enough to pull this pullable
 
-        _fixedJoint.connectedBody = _duckRB;
+
+        //old grabbing mechanic
+        //_fixedJoint.connectedBody = _duckRB;
+
+
     }
 
     public override void TryUnGrab()
@@ -42,5 +60,10 @@ public class NewPullable : Grabable
 
     }
 
+    private void UnableToPull()
+    {
+        //tell character they cant pull this object
+
+    }
 
 }
