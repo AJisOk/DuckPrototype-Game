@@ -2205,7 +2205,7 @@ GameObject:
   - component: {fileID: 316295569}
   - component: {fileID: 316295568}
   - component: {fileID: 316295571}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 344202468}
   - component: {fileID: 344202467}
   - component: {fileID: 344202470}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5916,7 +5916,7 @@ GameObject:
   - component: {fileID: 997814781}
   - component: {fileID: 997814780}
   - component: {fileID: 997814783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6637,7 +6637,7 @@ GameObject:
   - component: {fileID: 1108826358}
   - component: {fileID: 1108826357}
   - component: {fileID: 1108826360}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9057,7 +9057,7 @@ GameObject:
   - component: {fileID: 1396673977}
   - component: {fileID: 1396673976}
   - component: {fileID: 1396673979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10210,7 +10210,7 @@ GameObject:
   - component: {fileID: 1523250447}
   - component: {fileID: 1523250446}
   - component: {fileID: 1523250449}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12786,7 +12786,7 @@ GameObject:
   - component: {fileID: 1983914449}
   - component: {fileID: 1983914448}
   - component: {fileID: 1983914451}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13697,7 +13697,7 @@ GameObject:
   - component: {fileID: 2075117861}
   - component: {fileID: 2075117860}
   - component: {fileID: 2075117863}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14100,7 +14100,7 @@ GameObject:
   - component: {fileID: 2090222281}
   - component: {fileID: 2090222280}
   - component: {fileID: 2090222283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14493,6 +14493,10 @@ PrefabInstance:
     - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: _duckActionMap.m_Name
       value: Duck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _moveToLayerMask.m_Bits
+      value: 513
       objectReference: {fileID: 0}
     - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: _patternChallengeActionMap.m_Actions.Array.size
