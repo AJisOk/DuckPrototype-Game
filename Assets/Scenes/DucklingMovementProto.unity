@@ -337,59 +337,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1022816238437684048, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
   m_PrefabInstance: {fileID: 9015818970547799675}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &828875552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92111763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961b859786c0a06489382fce4fd4d62b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _duckAgent: {fileID: 828875553}
-  _spriteAnimator: {fileID: 1447200959}
-  _quackHandler: {fileID: 828875560}
-  _moveToLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  _rigidbody: {fileID: 828875559}
-  _speed: 4
-  _acceleration: 4
-  _turnSpeed: 4
-  _stoppingDistance: 0.2
-  _targetGroup: {fileID: 1440934844}
-  _ducklingTGWeight: 1
-  _ducklingTGRadius: 0
-  _grabableLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _grabableLayerIndex: 6
-  _ducklingsFollowing: []
-  _ducklingFollowIntervalTime: 0.5
---- !u!195 &828875553 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 3498161376642850839, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-  m_PrefabInstance: {fileID: 9015818970547799675}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &828875559 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-  m_PrefabInstance: {fileID: 9015818970547799675}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &828875560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3635842771388224077, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-  m_PrefabInstance: {fileID: 9015818970547799675}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92111763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa73c776827c31498acd8edce22dece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &848542298 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 1115431615762551172, guid: ff182bd23027b6d4ea111b76a9bbf72f, type: 3}
@@ -473,11 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1447200959 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5851700563715445694, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-  m_PrefabInstance: {fileID: 9015818970547799675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1591392182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6426267159999517838, guid: c3e8c0f2f5fe85746b5d3e33d156b931, type: 3}
@@ -1855,10 +1797,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 307575682748073262, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1022816238437684048, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1903,54 +1841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DuckPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: _duckActionMap.m_Id
-      value: 978703ad-e75e-47b8-a917-fcb91a0cd939
-      objectReference: {fileID: 0}
-    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: _duckActionMap.m_Name
-      value: Duck
-      objectReference: {fileID: 0}
-    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: _patternChallengeActionMap.m_Actions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: _patternChallengeActionMap.m_Bindings.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498161376642850839, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_ObstacleAvoidanceType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3635842771388224077, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: _allDucklingsQuack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_Drag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781662844278677970, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4825090106166685639, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_Material
+    - target: {fileID: 3148693189838517783, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+      propertyPath: _targetGroup
       value: 
-      objectReference: {fileID: 13400000, guid: d5795d6606f118040acc71bbe7d68a79, type: 2}
+      objectReference: {fileID: 1440934844}
     - target: {fileID: 5232859548427787283, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
       propertyPath: _debugMenuCG
       value: 
@@ -1959,22 +1853,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 7161702867312113651, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: e01663682fbec324b9b27d3bc800f8be, type: 3}
-    - target: {fileID: 7161702867312113651, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Gamepad
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2198730220876222076, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2196908276348227754, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 828875552}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0e41898aa5422c4593b77cfd0a45ce6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
