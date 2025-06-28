@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4825090106166685639}
   - component: {fileID: 4781662844278677970}
   - component: {fileID: 3498161376642850839}
-  - component: {fileID: 2198730220876222076}
+  - component: {fileID: 3148693189838517783}
   - component: {fileID: 7161702867312113651}
   - component: {fileID: 4910403790862461293}
   - component: {fileID: 5232859548427787283}
@@ -211,7 +211,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2196908276348227754}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d5795d6606f118040acc71bbe7d68a79, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -236,8 +236,8 @@ Rigidbody:
   m_GameObject: {fileID: 2196908276348227754}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.4
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -250,7 +250,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -275,8 +275,8 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &2198730220876222076
+  m_ObstacleAvoidanceType: 0
+--- !u!114 &3148693189838517783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,30 +285,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2196908276348227754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34b08ab7e60c02244b95d20276ae129f, type: 3}
+  m_Script: {fileID: 11500000, guid: 961b859786c0a06489382fce4fd4d62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followIntervalTime: 0.5
-  _maxDucklings: 5
-  _instantiatePrefabOnMove: 0
-  _remainingDistanceStopThreshold: 1
-  _duckActionAsset: {fileID: -944628639613478452, guid: b5a2e302e98ccfb4d9e5d05bba6957fe, type: 3}
-  _patternChallengeActionAsset: {fileID: -944628639613478452, guid: 18e948bb15548d6429c94d7c04bd0648, type: 3}
-  _pullableLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _pullableLayer: 6
   _duckAgent: {fileID: 3498161376642850839}
-  _gOToInstantiate: {fileID: 8904223346046912649, guid: 352263489cc4f8d41b012352a8dce268, type: 3}
-  _ducklingAgents: []
-  _ducklingNextPositions: []
   _spriteAnimator: {fileID: 5851700563715445694}
+  _quackHandler: {fileID: 3635842771388224077}
   _moveToLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 512
+  _rigidbody: {fileID: 4781662844278677970}
+  _speed: 4
+  _acceleration: 4
+  _turnSpeed: 4
+  _stoppingDistance: 0.2
   _targetGroup: {fileID: 0}
   _ducklingTGWeight: 1
   _ducklingTGRadius: 0
+  _grabableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _grabableLayerIndex: 6
+  _ducklingsFollowing: []
+  _ducklingFollowIntervalTime: 0.5
 --- !u!114 &7161702867312113651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b5a2e302e98ccfb4d9e5d05bba6957fe, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: e01663682fbec324b9b27d3bc800f8be, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -335,7 +334,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -640,7 +639,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 122496021
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1769082347, guid: 8a8af4b325a44ac4897dbda890301654, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
