@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +15,7 @@ public class Grabable : MonoBehaviour
     [SerializeField] protected CanvasGroup _popupCanvasGroup;
     [SerializeField] protected Material _grabbedMaterial;
 
+
     protected bool _isTargeted = false;
     protected bool _isHighlighted = false;
     protected bool _isGrabbed = false;
@@ -23,6 +27,9 @@ public class Grabable : MonoBehaviour
     protected Rigidbody _rigidbody;
 
     public UnityEvent OnGrabbed;
+
+    
+    public List<Transform> DucklingGrabTransforms = new List<Transform>();
     public bool IsPlayerNearby { get => _isPlayerNearby; }
 
     protected virtual void Awake()
