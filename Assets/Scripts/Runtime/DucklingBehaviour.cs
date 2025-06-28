@@ -9,7 +9,13 @@ public class DucklingBehaviour : MonoBehaviour
 {
     //when duck gets close enouhg, check if anything in between duckling and duck, if not, start following duck
 
+    [Header("Components")]
     [SerializeField] protected SphereCollider _ducklingAttractionCollider;
+    [SerializeField] protected Animator _spriteAnimator;
+    //[SerializeField] protected Transform _ducklingTransform;
+    [SerializeField] protected NavMeshAgent _navMeshAgent;
+
+    [Header("Quacking UI")]
     [SerializeField] protected CanvasGroup _lostQuackCG;
     [SerializeField] protected CanvasGroup _happyQuackCG;
     [SerializeField] protected AnimationCurve _quackAnimCurve;
@@ -20,22 +26,22 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected RectTransform _lostImageRectTransform;
     [SerializeField] protected float _offScreenBufferDistanceX = 120f;
     [SerializeField] protected float _offScreenBufferDistanceY = 70f;
-    [SerializeField] protected Animator _spriteAnimator;
-    [SerializeField] protected Transform _ducklingTransform;
+
+    [Header("Player Spotted UI")]
     [SerializeField] protected float _spottedAnimDuration;
     [SerializeField] protected AnimationCurve _spottedAnimCurve;
     [SerializeField] protected CanvasGroup _spottedCG;
+
+    [Header("Sound FX")]
     [SerializeField] protected EventReference _ducklingQuackSound;
 
     //[SerializeField] protected bool _hasPatternChallenge = false;
 
     public bool IsLost { get => _isLost; }
 
-    [Header("Pattern Challenge")]
-    [SerializeField] protected PatternChallengeHandler _patternChallengeHandler;
-
-
+    private Transform _ducklingTransform;
     private bool _isLost = true;
+    private bool _isPullingObject = false;
     private bool _isQuacking = false;
     private bool _hasBeenSpotted = false;
     private Vector3 _canvasPositionScreenPoint;
@@ -63,7 +69,7 @@ public class DucklingBehaviour : MonoBehaviour
         //_lostImageRectTransform = _lostQuackCG.GetComponentInChildren<RectTransform>();
         //if(_ducklingTransform == null) _ducklingTransform = GetComponentInParent<Transform>();
 
-        
+        _ducklingTransform = GetComponentInParent<Transform>();
 
     }
 
@@ -108,12 +114,23 @@ public class DucklingBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("OnTriggerEnter Called on: " + this.gameObject.name);
+        //old
+        //if(other.TryGetComponent<DuckMovement>(out DuckMovement duckPlayer) && _isLost)
+        //{
+        //    StartFollowPlayerDuck(duckPlayer);
+        //}
 
-        if(other.TryGetComponent<DuckMovement>(out DuckMovement duckPlayer) && _isLost)
+        if(_isLost && other.TryGetComponent<DuckCharacterController>(out DuckCharacterController duckPlayer))
         {
+            //duckling found by player!
             StartFollowPlayerDuck(duckPlayer);
         }
+    }
+
+    public void MoveTo(Vector3 targetPosition)
+    {
+        Debug.Log("moveto called on duckling");
+        _navMeshAgent.SetDestination(targetPosition);
     }
 
     private void OnDucklingFirstSpotted()
@@ -294,11 +311,17 @@ public class DucklingBehaviour : MonoBehaviour
 
     //}
 
-    private void StartFollowPlayerDuck(DuckMovement duckPlayer)
+    private void StartFollowPlayerDuck(DuckCharacterController duckPlayer)
     {
+        //duckling has been found!!
         _isLost = false;
-        duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
 
+        //play celebratory feedback on duckling here
+
+        //old
+        //duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());
+
+        duckPlayer.DucklingStartsFollowing(this);
         _ducklingAttractionCollider.enabled = false;
     }
 }

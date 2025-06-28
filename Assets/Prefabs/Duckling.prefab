@@ -1144,6 +1144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ducklingAttractionCollider: {fileID: 1518867844859183381}
+  _spriteAnimator: {fileID: 1468040461526106963}
+  _navMeshAgent: {fileID: 8141164628494288308}
   _lostQuackCG: {fileID: 5406043741057147933}
   _happyQuackCG: {fileID: 6625876233468998529}
   _quackAnimCurve:
@@ -1195,8 +1197,6 @@ MonoBehaviour:
   _lostImageRectTransform: {fileID: 7572246532598729891}
   _offScreenBufferDistanceX: 120
   _offScreenBufferDistanceY: 70
-  _spriteAnimator: {fileID: 1468040461526106963}
-  _ducklingTransform: {fileID: 251128115254465397}
   _spottedAnimDuration: 2
   _spottedAnimCurve:
     serializedVersion: 2

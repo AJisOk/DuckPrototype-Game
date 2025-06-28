@@ -9,7 +9,7 @@ public class TargetGroupAreaToFrame : MonoBehaviour
     //[SerializeField] protected FMODUnity.EventReference _musicSound;
 
     private Collider _areaTrigger;
-    private DuckMovement _duckMovement;
+    private DuckCharacterController _playerDuck;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class TargetGroupAreaToFrame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.TryGetComponent<DuckMovement>(out _duckMovement))
+        if(other.gameObject.TryGetComponent<DuckCharacterController>(out _playerDuck))
         {
             //duck entered area > add desired area to frame
             _targetGroup.AddMember(transform, _areaTGWeight, _areaTGRadius);
@@ -30,7 +30,7 @@ public class TargetGroupAreaToFrame : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.TryGetComponent<DuckMovement>(out _duckMovement))
+        if(other.gameObject.TryGetComponent<DuckCharacterController>(out _playerDuck))
         {
             _targetGroup.RemoveMember(transform);
         }
