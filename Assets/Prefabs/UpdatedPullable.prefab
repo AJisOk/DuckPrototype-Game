@@ -290,7 +290,7 @@ MonoBehaviour:
   - {fileID: 8383845965144967730}
   - {fileID: 2498612347176344460}
   _fixedJoint: {fileID: 2580820113044480869}
-  _ducklingsRequiredToPull: 1
+  _ducklingsRequiredToPull: 0
   _ducklingsRequiredText: {fileID: 2726325346566616769}
   _pullingSpeed: 4
   _acceleration: 1

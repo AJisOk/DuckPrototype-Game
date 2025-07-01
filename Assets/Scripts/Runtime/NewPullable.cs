@@ -33,25 +33,6 @@ public class NewPullable : Grabable
         base.OnTriggerEnter(other);
     }
 
-    private void FixedUpdate()
-    {
-        //if duck is moving and this is being pulled
-        if (!_isBeingPulled) return;
-        if (!_playerDuckController.IsMoving) return;
-
-        //move in direction towards duck
-        
-        Vector3 direction = (_duckRB.transform.position - transform.position).normalized;
-        Vector3 targetVelocity = direction * _pullingSpeed;
-        Vector3 diff = targetVelocity - _rigidbody.linearVelocity;
-        diff.y = 0f;
-        Vector3 forceToAdd = targetVelocity * _acceleration;
-
-        _rigidbody.AddForce(forceToAdd);
-
-        Debug.Log("force applied to pullable" + forceToAdd);
-    }
-
     public override void TryGrab()
     {
         if (!_isTargeted) return;
@@ -81,16 +62,6 @@ public class NewPullable : Grabable
         _fixedJoint.connectedBody = null;
 
         //_isBeingPulled = false;
-    }
-
-    private void StartPulling()
-    {
-
-    }
-
-    private void StopPulling()
-    {
-
     }
 
     private void UnableToPull()
