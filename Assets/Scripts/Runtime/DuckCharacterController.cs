@@ -88,7 +88,7 @@ public class DuckCharacterController : MonoBehaviour
 
     private void OnMoveTo(InputValue inputValue)
     {
-        //if (!_mouseMovement) return;
+        if (!_canMove) return;
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -118,6 +118,16 @@ public class DuckCharacterController : MonoBehaviour
             _duckAgent.SetDestination(_moveToDestination);
 
         }
+    }
+
+    public void ForceMoveTo(Vector3 destination)
+    {
+        _duckAgent.SetDestination(destination);
+    }
+
+    public void SetCanMove(bool status)
+    {
+        _canMove = status;
     }
 
     private void OnQuack(InputValue inputValue)
