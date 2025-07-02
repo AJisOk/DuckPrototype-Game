@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{83e6c311-0af5-4e16-9a5d-632730e04399}">
+		<property name="assetPath">
+			<value>SFX/sfx_duck_call_05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.66662500000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9fe2a7c8-2f13-4835-95ae-861b5126ca2c}</destination>
+		</relationship>
+	</object>
+</objects>

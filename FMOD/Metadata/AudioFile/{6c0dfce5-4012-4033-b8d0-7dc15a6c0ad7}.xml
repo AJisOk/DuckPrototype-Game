@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6c0dfce5-4012-4033-b8d0-7dc15a6c0ad7}">
+		<property name="assetPath">
+			<value>SFX/sfx_duckling_joined_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0291250000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9fe2a7c8-2f13-4835-95ae-861b5126ca2c}</destination>
+		</relationship>
+	</object>
+</objects>
