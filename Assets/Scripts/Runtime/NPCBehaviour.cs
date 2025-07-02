@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 
 //[RequireComponent(typeof(BoxCollider))]
-[RequireComponent(typeof(SpriteRenderer))]
+//[RequireComponent(typeof(SpriteRenderer))]
 
 public class NPCBehaviour : MonoBehaviour
 {
