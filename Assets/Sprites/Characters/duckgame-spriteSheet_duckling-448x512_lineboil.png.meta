@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,24 +37,24 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,12 +108,892 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ducklingDown1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937bebd9f84051a49b10bfac3f7592bc
+      internalID: 1748006636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625f784a5f7470d48b9b66a1c6dfd517
+      internalID: -191564073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a1a33561dc1964f98530259e9bde3b
+      internalID: -134506506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f589fd5d0350d046b84e446f27be906
+      internalID: 1611891593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aef5b862a7ae4746b55da1ff09e3af4
+      internalID: -269130600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8946bfdbabfb04c984cceb88682ab2
+      internalID: -884432655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ee0fa8f86fa4a449099d6e63421d54
+      internalID: -1979357255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDown8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 2048
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab34c13b2d489bf4a9cb99909046e709
+      internalID: 761561979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9aad04cbbdb91548b258b65f1c14673
+      internalID: 1820568232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855869164e88f10499f6e169be565057
+      internalID: -8669286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bc7a20dae472e4396436744a68bf01
+      internalID: 1134919628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf201823d9321864096788eb71a40c02
+      internalID: 981634741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346dfcdae4c0c4c439c5754dcc1e4d18
+      internalID: -599627006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c5ec3bcd9554d4387203c6ef2f0d4f
+      internalID: 1695520024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffedf6af2e21a343a370eee37814e82
+      internalID: 947319867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUp8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1536
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d19baeb9ca454d4d884c86facdf5c7b
+      internalID: 1037307038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8bcb2d8715a184ebe8cac7b3feef04
+      internalID: -1750709873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e107c711907c90944a0bd28e6578d9b0
+      internalID: -959246611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9bb356714b59a41a598bf01b5509ba
+      internalID: -1535043524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9947b58e71ff9094db6e86f108cbee5c
+      internalID: 1017363883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c781331cb7c8f714a91fe79ed5abdbf3
+      internalID: -1276783040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6eb693c112b4e419dc3e6c5db1e191
+      internalID: -605304982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d8a5ff8139755488ad74ca5ee7e71c
+      internalID: -189658476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingUpRight8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1024
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2f178bed4542e4eb60e42f7eba0df4
+      internalID: -1775959098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c363e8df3c98ccc4881a5b9eb4c3ad01
+      internalID: 2145281476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc3bdfe2060ea84490ba25fc74461b0
+      internalID: -781438172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9a1185a8464194d9dfb072be75eec0
+      internalID: 129922053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb50836fde2d49940aafbc46ec1c77c3
+      internalID: -1835937241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0795d13677b99f4cbaea4f4ac19e7d8
+      internalID: -1297318301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af927f6d1065d949b465ae88fe16c5b
+      internalID: 1119463373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269bf780bc2e97e44b5b5ed100070915
+      internalID: 813659445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingDownRight8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 512
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e608c1f1e3536ed4fbcdf5819abc33a5
+      internalID: -1446514718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d0cf68014287f4e93c5917d728cd51
+      internalID: -996802292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bf149585b06a149aa37a2e27f0e371
+      internalID: 718399283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afeb6afe0cc27c4281a9865e8436aa5
+      internalID: 438599006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight4
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d345d802666034d4c957d3c26d38fb74
+      internalID: -578513035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349217162e6e5654d943811528beb12e
+      internalID: 1283554350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight6
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8198ec3982b5c542ac1b08f62b8e373
+      internalID: 1238203313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835c4d3eab24fcf4b92743d1d45398bf
+      internalID: -615342816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducklingRight8
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 0
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d43dd5973dc84a48bc496a292a9cbe1
+      internalID: -149316854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b9778e846fce3174abad88c987549155
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +1002,47 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ducklingDown1: 1748006636
+      ducklingDown2: -191564073
+      ducklingDown3: -134506506
+      ducklingDown4: 1611891593
+      ducklingDown5: -269130600
+      ducklingDown6: -884432655
+      ducklingDown7: -1979357255
+      ducklingDown8: 761561979
+      ducklingDownRight1: 2145281476
+      ducklingDownRight2: -781438172
+      ducklingDownRight3: 129922053
+      ducklingDownRight4: -1835937241
+      ducklingDownRight5: -1297318301
+      ducklingDownRight6: 1119463373
+      ducklingDownRight7: 813659445
+      ducklingDownRight8: -1446514718
+      ducklingRight1: -996802292
+      ducklingRight2: 718399283
+      ducklingRight3: 438599006
+      ducklingRight4: -578513035
+      ducklingRight5: 1283554350
+      ducklingRight6: 1238203313
+      ducklingRight7: -615342816
+      ducklingRight8: -149316854
+      ducklingUp1: 1820568232
+      ducklingUp2: -8669286
+      ducklingUp3: 1134919628
+      ducklingUp4: 981634741
+      ducklingUp5: -599627006
+      ducklingUp6: 1695520024
+      ducklingUp7: 947319867
+      ducklingUp8: 1037307038
+      ducklingUpRight1: -1750709873
+      ducklingUpRight2: -959246611
+      ducklingUpRight3: -1535043524
+      ducklingUpRight4: 1017363883
+      ducklingUpRight5: -1276783040
+      ducklingUpRight6: -605304982
+      ducklingUpRight7: -189658476
+      ducklingUpRight8: -1775959098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
