@@ -33,6 +33,13 @@ public class NewPullable : Grabable
         base.OnTriggerEnter(other);
     }
 
+    protected override void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer != _duckLayer) return;
+
+        _isPlayerNearby = false;
+    }
+
     public override void TryGrab()
     {
         if (!_isTargeted) return;

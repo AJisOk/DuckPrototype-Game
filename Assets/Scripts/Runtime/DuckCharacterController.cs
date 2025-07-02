@@ -228,8 +228,11 @@ public class DuckCharacterController : MonoBehaviour
     public void DucklingStartsFollowing(DucklingBehaviour ducklingToAdd)
     {
         _ducklingsFollowing.Add(ducklingToAdd);
+        
+        //TODO smooth this out
+        //_targetGroup.AddMember(ducklingToAdd.transform,_ducklingTGWeight, _ducklingTGRadius);
 
-        _targetGroup.AddMember(ducklingToAdd.transform,_ducklingTGWeight, _ducklingTGRadius);
+        StartCoroutine(AddDucklingToTG(ducklingToAdd));
     }
 
     private void UpdateDucklingFollowPositions()
@@ -247,5 +250,28 @@ public class DuckCharacterController : MonoBehaviour
             _ducklingsFollowing[i].MoveTo(_ducklingNextFollowPositions[i]);
         }
 
+    }
+
+    private IEnumerator AddDucklingToTG(DucklingBehaviour ducklingToAdd)
+    {
+        float timer = 0f;
+
+        _targetGroup.AddMember(ducklingToAdd.transform, 0f, _ducklingTGRadius);
+        int ducklingIndex = _targetGroup.FindMember(ducklingToAdd.transform);
+
+        AnimationCurve animCurve = AnimationCurve.Linear(0f, 0f, 1f, _ducklingTGWeight);
+
+        while (timer < 1f)
+        {
+            _targetGroup.Targets[ducklingIndex].Weight = animCurve.Evaluate(timer);
+            
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _targetGroup.Targets[ducklingIndex].Weight = _ducklingTGWeight;
+
+        yield return null;
     }
 }

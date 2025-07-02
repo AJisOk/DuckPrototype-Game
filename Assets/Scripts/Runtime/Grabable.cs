@@ -127,14 +127,14 @@ public class Grabable : MonoBehaviour
 
         _isPlayerNearby = false;
 
-        //if (_isGrabbed) _playerDuckController.UnGrab();
+        if (_isGrabbed) _playerDuckController.UnGrab();
 
         //if(_isTargeted)
         //{
         //    _playerDuckController.OnUntargetCurrentGrabable(this);  
         //    //OnUntarget();
         //}
-        
+
 
     }
 }
