@@ -125,6 +125,17 @@ public class DuckCharacterController : MonoBehaviour
         _duckAgent.SetDestination(destination);
     }
 
+    public void SetFacingTarget(Vector3 target)
+    {
+        Vector3 diff = (target - transform.position).normalized;
+
+        diff = new Vector3(diff.x, 0f, diff.z);
+
+        transform.rotation = Quaternion.LookRotation(diff);
+
+
+    }
+
     public void SetCanMove(bool status)
     {
         _canMove = status;
