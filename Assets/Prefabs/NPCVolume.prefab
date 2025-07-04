@@ -80,7 +80,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _targetGroup: {fileID: 0}
-  _nPCTargetGroupWeight: 1
+  _nPCTargetGroupWeight: 0.5
   _nPCTargetGroupRadius: 3
   _defaultBeaverChitter:
     Guid:
