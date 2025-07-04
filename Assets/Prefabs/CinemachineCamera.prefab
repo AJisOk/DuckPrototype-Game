@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FramingMode: 2
-  FramingSize: 0.8
+  FramingSize: 0.7
   CenterOffset: {x: 0, y: -0.2}
   Damping: 1
   SizeAdjustment: 1

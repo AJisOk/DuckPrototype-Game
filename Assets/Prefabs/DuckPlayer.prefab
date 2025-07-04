@@ -323,6 +323,13 @@ MonoBehaviour:
       Data3: -2071747145
       Data4: -294907926
     Path: event:/SFX/Unable to Pull
+  _pullingSoundEvent:
+    Guid:
+      Data1: 1805716655
+      Data2: 1274928792
+      Data3: -1987745382
+      Data4: -1214724345
+    Path: event:/SFX/Pulling
 --- !u!114 &7161702867312113651
 MonoBehaviour:
   m_ObjectHideFlags: 0

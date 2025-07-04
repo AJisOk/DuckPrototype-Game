@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Unity.Cinemachine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class DuckCharacterController : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected float _responseQuackCooldown = 1f;
     [SerializeField] protected EventReference _responseQuackSoundEvent;
     [SerializeField] protected EventReference _unableToPullSoundEvent;
+    [SerializeField] protected EventReference _pullingSoundEvent;
 
     //private variables
     private PlayerInput _playerInput;
@@ -54,6 +56,7 @@ public class DuckCharacterController : MonoBehaviour
     private Vector3 _moveToDestination;
     private Grabable _currentHighlightedGrabable = null;
     private Grabable _currentTargetGrabable = null;
+    private EventInstance _pullingSoundInstance;
 
     private float _timer = 0f;
     private float _responseCooldownTimer = 0f;
@@ -71,6 +74,7 @@ public class DuckCharacterController : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
 
+        _pullingSoundInstance = RuntimeManager.CreateInstance(_pullingSoundEvent);
     }
 
     private void LateUpdate()
@@ -126,7 +130,7 @@ public class DuckCharacterController : MonoBehaviour
             _duckAgent.SetDestination(_moveToDestination);
 
             //play response sfx if its been long enough since last time
-            if(_responseCooldownTimer > _responseQuackCooldown)
+            if(_responseCooldownTimer > _responseQuackCooldown && !_isGrabbing)
             {
                 RuntimeManager.PlayOneShot(_responseQuackSoundEvent);
                 _responseCooldownTimer = 0f;
@@ -231,11 +235,15 @@ public class DuckCharacterController : MonoBehaviour
 
     public void Grab()
     {
+        if (_isGrabbing) return;
+
         Debug.Log("Grab called on character controller");
         _isGrabbing = true;
         _currentTargetGrabable.TryGrab();
 
-
+        RuntimeManager.StudioSystem.setParameterByName("Number_of_Ducklings", DucklingsFollowingCount);
+        
+        _pullingSoundInstance.start();
     }
 
     public void UnGrab()
@@ -245,6 +253,8 @@ public class DuckCharacterController : MonoBehaviour
         Debug.Log("UnGrab called on Character Controller");
         _isGrabbing = false;
         _currentTargetGrabable.TryUnGrab();
+
+        _pullingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public void UnableToGrab()
