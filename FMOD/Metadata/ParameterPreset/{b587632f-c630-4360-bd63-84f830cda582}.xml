@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{b587632f-c630-4360-bd63-84f830cda582}">
+		<property name="name">
+			<value>Number_of_Ducklings</value>
+		</property>
+		<relationship name="folder">
+			<destination>{87aecb69-7769-4381-ae04-1bfd2d1adc6f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1d641deb-f863-4500-91a1-e7b3a1b4fd2d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1d641deb-f863-4500-91a1-e7b3a1b4fd2d}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
