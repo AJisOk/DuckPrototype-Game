@@ -240,6 +240,8 @@ public class DuckCharacterController : MonoBehaviour
 
     public void UnGrab()
     {
+        if (!_isGrabbing) return;
+
         Debug.Log("UnGrab called on Character Controller");
         _isGrabbing = false;
         _currentTargetGrabable.TryUnGrab();

@@ -4,6 +4,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 //[RequireComponent(typeof(BoxCollider))]
 //[RequireComponent(typeof(SpriteRenderer))]
@@ -15,6 +17,14 @@ public class NPCBehaviour : MonoBehaviour
     [SerializeField] protected Animator _nPCAnimator;
     [SerializeField] protected SpriteRenderer _nPCSpriteRenderer;
     [SerializeField] protected float _animInterval = .5f;
+    [SerializeField] protected Image _thoughtBubbleImage;
+    [SerializeField] protected Sprite _desiredObjectSprite;
+    [SerializeField] protected Sprite _correctObjectSprite;
+    [SerializeField] protected Sprite _wrongObjectSprite;
+
+    [Header("Deliverable")]
+    [SerializeField] protected int _desiredDeliverableID = 0;
+    [SerializeField] protected UnityEvent _onSuccesfulDelivery;
 
     [Header("Target Group")]
     [SerializeField] protected CinemachineTargetGroup _targetGroup;
@@ -22,7 +32,9 @@ public class NPCBehaviour : MonoBehaviour
     [SerializeField] protected float _nPCTargetGroupRadius = 0f;
 
     [Header("SFX")]
-    [SerializeField] protected EventReference _beaverChitter;
+    [SerializeField] protected EventReference _defaultBeaverChitter;
+    [SerializeField] protected EventReference _happyBeaverChitter;
+    [SerializeField] protected EventReference _grumpyBeaverChitter;
 
     [Header("MoveTo Transform")]
     [SerializeField] protected Transform _moveToTransform;
@@ -31,8 +43,11 @@ public class NPCBehaviour : MonoBehaviour
     //private SpriteRenderer _spriteRenderer;
 
     private DuckCharacterController _playerController;
+    private NPCDeliverable _deliverable;
 
     private bool _hasMetPlayer = false;
+    private bool _questComplete = false;
+    private bool _isPlayerNearby = false;
     
 
     private void Awake()
@@ -51,21 +66,50 @@ public class NPCBehaviour : MonoBehaviour
 
             //on trigger exit, remove npc from target group
 
-            if (_hasMetPlayer)
+            if(!_questComplete) _thoughtBubbleImage.sprite = _desiredObjectSprite;
+
+            if (!_hasMetPlayer)
             {
-                StartCoroutine(AddNPCToTG(_nPCSpriteRenderer.transform));
+                _hasMetPlayer = true;
+
+                _playerController.UnGrab();
+                _playerController.SetCanMove(false);
+                _playerController.ForceMoveTo(_moveToTransform.position);
+
+                StartCoroutine(FirstTimePlayerEncounter(_nPCSpriteRenderer.transform));
+
+                return;
+            }
+
+            StartCoroutine(AddNPCToTG(_nPCSpriteRenderer.transform));
+            _nPCAnimator.SetBool("ShowThoughtBubble", true);
+        }
+
+        if(other.gameObject.TryGetComponent<NPCDeliverable>(out _deliverable) && _hasMetPlayer)
+        {
+            //when deliverable enters and the player has met npc
+            //add deliverable to target group?
+            //check the index, if matching, npc is happy delivery is complete
+            //if not matching, npc is not happy
+
+            if(_desiredDeliverableID != _deliverable.DeliverableID)
+            {
+                //play wrong deliverable sfx
+                //show wrong deliverable icon
+                _thoughtBubbleImage.sprite = _wrongObjectSprite;
+                
                 _nPCAnimator.SetBool("ShowThoughtBubble", true);
 
                 return;
             }
 
-            _hasMetPlayer = true;
+            //play correct deliverable sfx and UI anim
+            _thoughtBubbleImage.sprite = _correctObjectSprite;
+            _nPCAnimator.SetBool("ShowThoughtBubble", true);
 
-            _playerController.SetCanMove(false);
-            _playerController.ForceMoveTo(_moveToTransform.position);
+            _questComplete = true;
 
-            StartCoroutine(FirstTimePlayerEncounter(_nPCSpriteRenderer.transform));
-
+            _onSuccesfulDelivery.Invoke();
         }
     }
 

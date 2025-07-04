@@ -71,10 +71,32 @@ MonoBehaviour:
   _nPCAnimator: {fileID: 0}
   _nPCSpriteRenderer: {fileID: 0}
   _animInterval: 0.5
+  _thoughtBubbleImage: {fileID: 0}
+  _desiredObjectSprite: {fileID: 21300000, guid: ba21e5cf016654742a140da66486e740, type: 3}
+  _correctObjectSprite: {fileID: 21300000, guid: b36eca28ab16b974c87b12b11170200d, type: 3}
+  _wrongObjectSprite: {fileID: 21300000, guid: 8c54b590515293b41bb6ba066455770a, type: 3}
+  _desiredDeliverableID: 0
+  _onSuccesfulDelivery:
+    m_PersistentCalls:
+      m_Calls: []
   _targetGroup: {fileID: 0}
   _nPCTargetGroupWeight: 1
   _nPCTargetGroupRadius: 3
-  _beaverChitter:
+  _defaultBeaverChitter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  _happyBeaverChitter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  _grumpyBeaverChitter:
     Guid:
       Data1: 0
       Data2: 0
