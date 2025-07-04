@@ -242,8 +242,10 @@ public class DuckCharacterController : MonoBehaviour
         _currentTargetGrabable.TryGrab();
 
         RuntimeManager.StudioSystem.setParameterByName("Number_of_Ducklings", DucklingsFollowingCount);
-        
         _pullingSoundInstance.start();
+        
+
+
     }
 
     public void UnGrab()
