@@ -48,15 +48,11 @@ public class DuckCharacterController : MonoBehaviour
     private Vector3 _moveToDestination;
     private Grabable _currentHighlightedGrabable = null;
     private Grabable _currentTargetGrabable = null;
-    private Vector3 _moveInput;
-    private Vector3 _localMoveInput;
-    private Vector3 _lookDirection;
 
     private float _timer = 0f;
     private bool _isGrabbing = false;
     private bool _canMove = true;
     private bool _hasMoveInput = false;
-    private bool _hasTurnInput = false;
 
     public int DucklingsFollowingCount { get => _ducklingsFollowing.Count; }
     public bool IsMoving
@@ -68,19 +64,6 @@ public class DuckCharacterController : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
 
-        _lookDirection = transform.forward;
-
-    }
-
-    private void Update()
-    {
-        //rotate character rowards movement direction
-        if (_hasTurnInput)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(_lookDirection);
-            Quaternion rotation = Quaternion.Slerp(_rigidbody.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
-            _rigidbody.transform.rotation = rotation;
-        }
     }
 
     private void LateUpdate()
@@ -93,27 +76,6 @@ public class DuckCharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //calculate movement for keyboard+controller
-        _duckAgent.nextPosition = _rigidbody.transform.position;
-        
-        if(_isGrabbing) SetLookDirection((_currentTargetGrabable.transform.position - transform.position).normalized);
-        else SetLookDirection(_moveInput);
-
-
-        Vector3 targetVelocity = _moveInput * _speed;
-
-        Vector3 velocityDiff = targetVelocity - _rigidbody.linearVelocity;
-        velocityDiff.y = 0f;
-
-
-        Vector3 acceleration = velocityDiff * _acceleration;
-
-        if (!_hasMoveInput) acceleration = Vector3.zero;
-
-        _rigidbody.AddForce(acceleration);
-
-
-
         _timer += Time.deltaTime;
         if (_timer >= _ducklingFollowIntervalTime)
         {
@@ -126,7 +88,7 @@ public class DuckCharacterController : MonoBehaviour
 
     private void OnMoveTo(InputValue inputValue)
     {
-        //if (!_mouseMovement) return;
+        if (!_canMove) return;
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -158,59 +120,30 @@ public class DuckCharacterController : MonoBehaviour
         }
     }
 
-    private void OnTryGrab(InputValue inputValue)
+    public void ForceMoveTo(Vector3 destination)
     {
-        //check if there is a target grabable and its in range
-        //if true
-        if(_currentTargetGrabable == null) return;
-
-        Grab();
+        _duckAgent.SetDestination(destination);
     }
-    
-    private void OnTryRelease(InputValue inputValue)
-    {
-        if (!_isGrabbing) return;
 
-        UnGrab();
+    public void SetFacingTarget(Vector3 target)
+    {
+        Vector3 diff = (target - transform.position).normalized;
+
+        diff = new Vector3(diff.x, 0f, diff.z);
+
+        transform.rotation = Quaternion.LookRotation(diff);
+
+
+    }
+
+    public void SetCanMove(bool status)
+    {
+        _canMove = status;
     }
 
     private void OnQuack(InputValue inputValue)
     {
         _quackHandler.Quack();
-    }
-
-    private void OnMove(InputValue inputValue)
-    {
-        Vector2 input = inputValue.Get<Vector2>();
-        _moveInput = new Vector3(input.x, 0f, input.y);
-
-
-        if (!_canMove)
-        {
-            _moveInput = Vector3.zero;
-            return;
-        }
-
-        _moveInput = Vector3.ClampMagnitude(_moveInput, 1f);
-
-        //Debug.Log(_moveInput);
-
-        _hasMoveInput = _moveInput.magnitude > 0.1f;
-        _moveInput = _hasMoveInput ? _moveInput : Vector3.zero;
-
-        _localMoveInput = transform.InverseTransformDirection(_moveInput);
-    }
-
-    private void SetLookDirection(Vector3 direction)
-    {
-        if(!_canMove || direction.magnitude < 0.1f)
-        {
-            _hasTurnInput = false;
-            return;
-        }
-
-        _hasTurnInput = true;
-        _lookDirection = new Vector3(direction.x, 0f, direction.z).normalized;
     }
 
     private void TryTargetGrabable(Grabable targetGrabable)
@@ -222,9 +155,6 @@ public class DuckCharacterController : MonoBehaviour
             //begin targeting target grabable and move to it
             OnTargetGrabable(targetGrabable);
             MoveToTargetGrabable();
-
-            if (targetGrabable.IsPlayerNearby) Grab();
-
             return;
         }
 
@@ -319,8 +249,11 @@ public class DuckCharacterController : MonoBehaviour
     public void DucklingStartsFollowing(DucklingBehaviour ducklingToAdd)
     {
         _ducklingsFollowing.Add(ducklingToAdd);
+        
+        //TODO smooth this out
+        //_targetGroup.AddMember(ducklingToAdd.transform,_ducklingTGWeight, _ducklingTGRadius);
 
-        _targetGroup.AddMember(ducklingToAdd.transform,_ducklingTGWeight, _ducklingTGRadius);
+        StartCoroutine(AddDucklingToTG(ducklingToAdd));
     }
 
     private void UpdateDucklingFollowPositions()
@@ -338,5 +271,28 @@ public class DuckCharacterController : MonoBehaviour
             _ducklingsFollowing[i].MoveTo(_ducklingNextFollowPositions[i]);
         }
 
+    }
+
+    private IEnumerator AddDucklingToTG(DucklingBehaviour ducklingToAdd)
+    {
+        float timer = 0f;
+
+        _targetGroup.AddMember(ducklingToAdd.transform, 0f, _ducklingTGRadius);
+        int ducklingIndex = _targetGroup.FindMember(ducklingToAdd.transform);
+
+        AnimationCurve animCurve = AnimationCurve.Linear(0f, 0f, 1f, _ducklingTGWeight);
+
+        while (timer < 1f)
+        {
+            _targetGroup.Targets[ducklingIndex].Weight = animCurve.Evaluate(timer);
+            
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _targetGroup.Targets[ducklingIndex].Weight = _ducklingTGWeight;
+
+        yield return null;
     }
 }

@@ -73,6 +73,8 @@ public class DuckQuackHandler : MonoBehaviour
         //we want the closest to do a focused quack before clearing the variable
         //and we want the rest to do a muted quack
 
+        if (ducklingsInRange.Count == 0) return;
+
         _closestLostDuckling.TryFocusedQuack();
 
         foreach (DucklingBehaviour db in ducklingsInRange) db.TryMutedQuack();

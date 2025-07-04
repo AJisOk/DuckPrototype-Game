@@ -42,6 +42,10 @@ public class Grabable : MonoBehaviour
     public virtual void OnTarget()
     {
         _isTargeted = true;
+
+        //if player is still next to grabable, forego waiting for it to enter trigger and tell it to try and grab
+
+        if (_isPlayerNearby) _playerDuckController.Grab();
     }
 
     public virtual void OnUntarget()
@@ -96,14 +100,11 @@ public class Grabable : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-
-        //K+GP > if is highlighted, grabable becomes targeted
         //M > if targeted, grabable is grabbed by player
 
         if (other.gameObject.layer != _duckLayer) return;
 
         _isPlayerNearby = true;
-        _isHighlighted = true;
 
         _playerDuckController = other.gameObject.GetComponent<DuckCharacterController>();
 
@@ -116,35 +117,24 @@ public class Grabable : MonoBehaviour
             return;
         }
 
-        if(_isHighlighted)
-        {
-            //target object
-            //OnTarget();
-            _playerDuckController.OnTargetGrabable(this);
-            //return
-            return;
-        }
-
     }
 
     protected virtual void OnTriggerExit(Collider other)
     {
-        //k+GP > if targeted > untarget
         //M > same
         
         if (other.gameObject.layer != _duckLayer) return;
 
         _isPlayerNearby = false;
-        _isHighlighted = false;
 
-        //if (_isGrabbed) _playerDuckController.UnGrab();
+        if (_isGrabbed) _playerDuckController.UnGrab();
 
         //if(_isTargeted)
         //{
         //    _playerDuckController.OnUntargetCurrentGrabable(this);  
         //    //OnUntarget();
         //}
-        
+
 
     }
 }
