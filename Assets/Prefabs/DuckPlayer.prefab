@@ -308,6 +308,21 @@ MonoBehaviour:
   _grabableLayerIndex: 6
   _ducklingsFollowing: []
   _ducklingFollowIntervalTime: 0.5
+  _responseQuackCooldown: 2
+  _responseQuackSoundEvent:
+    Guid:
+      Data1: 985024483
+      Data2: 1282914951
+      Data3: 804748193
+      Data4: 40380419
+    Path: event:/SFX/Duck Acknowledge
+  _unableToPullSoundEvent:
+    Guid:
+      Data1: 1288422447
+      Data2: 1150165990
+      Data3: -2071747145
+      Data4: -294907926
+    Path: event:/SFX/Unable to Pull
 --- !u!114 &7161702867312113651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +369,13 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
+  _clickSound:
+    Guid:
+      Data1: 835644061
+      Data2: 1090568342
+      Data3: 1471559860
+      Data4: 1794011749
+    Path: event:/SFX/Splash on Click
 --- !u!114 &5232859548427787283
 MonoBehaviour:
   m_ObjectHideFlags: 0

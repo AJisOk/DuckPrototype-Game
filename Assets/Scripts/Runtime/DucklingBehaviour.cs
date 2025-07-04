@@ -34,7 +34,7 @@ public class DucklingBehaviour : MonoBehaviour
 
     [Header("Sound FX")]
     [SerializeField] protected EventReference _ducklingQuackSound;
-
+    [SerializeField] protected EventReference _ducklingFoundSoundEvent;
     //[SerializeField] protected bool _hasPatternChallenge = false;
 
     public bool IsLost { get => _isLost; }
@@ -331,6 +331,9 @@ public class DucklingBehaviour : MonoBehaviour
         _isLost = false;
 
         //play celebratory feedback on duckling here
+        //TODO create a short sequence when we discover a duckling
+
+        RuntimeManager.PlayOneShot(_ducklingFoundSoundEvent);
 
         //old
         //duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());

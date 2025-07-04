@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Unity.Cinemachine;
+using FMODUnity;
 
 public class DuckCharacterController : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected List<DucklingBehaviour> _ducklingsFollowing = new List<DucklingBehaviour>();
     [SerializeField] protected float _ducklingFollowIntervalTime = .5f;
 
+    [Header("SFX")]
+    [SerializeField] protected float _responseQuackCooldown = 1f;
+    [SerializeField] protected EventReference _responseQuackSoundEvent;
+    [SerializeField] protected EventReference _unableToPullSoundEvent;
+
     //private variables
     private PlayerInput _playerInput;
 
@@ -50,6 +56,7 @@ public class DuckCharacterController : MonoBehaviour
     private Grabable _currentTargetGrabable = null;
 
     private float _timer = 0f;
+    private float _responseCooldownTimer = 0f;
     private bool _isGrabbing = false;
     private bool _canMove = true;
     private bool _hasMoveInput = false;
@@ -76,6 +83,7 @@ public class DuckCharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _responseCooldownTimer += Time.deltaTime;
         _timer += Time.deltaTime;
         if (_timer >= _ducklingFollowIntervalTime)
         {
@@ -117,6 +125,13 @@ public class DuckCharacterController : MonoBehaviour
             _moveToDestination = hit.point;
             _duckAgent.SetDestination(_moveToDestination);
 
+            //play response sfx if its been long enough since last time
+            if(_responseCooldownTimer > _responseQuackCooldown)
+            {
+                RuntimeManager.PlayOneShot(_responseQuackSoundEvent);
+                _responseCooldownTimer = 0f;
+            }
+
         }
     }
 
@@ -132,8 +147,6 @@ public class DuckCharacterController : MonoBehaviour
         diff = new Vector3(diff.x, 0f, diff.z);
 
         transform.rotation = Quaternion.LookRotation(diff);
-
-
     }
 
     public void SetCanMove(bool status)
@@ -234,6 +247,10 @@ public class DuckCharacterController : MonoBehaviour
 
     public void UnableToGrab()
     {
+        //play sfx and sweating animation
+
+        RuntimeManager.PlayOneShot(_unableToPullSoundEvent);
+
         UnGrab();
     }
 

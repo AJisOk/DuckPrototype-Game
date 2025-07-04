@@ -1248,6 +1248,13 @@ MonoBehaviour:
       Data3: -646854488
       Data4: -1709861656
     Path: event:/SFX/Quack Response
+  _ducklingFoundSoundEvent:
+    Guid:
+      Data1: 1158067781
+      Data2: 1127422146
+      Data3: -12810080
+      Data4: -612948031
+    Path: event:/SFX/Duckling Joined
 --- !u!135 &1518867844859183381
 SphereCollider:
   m_ObjectHideFlags: 0
