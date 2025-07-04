@@ -72,10 +72,32 @@ MonoBehaviour:
   _nPCAnimator: {fileID: 7311496366032455840}
   _nPCSpriteRenderer: {fileID: 5354952840331397602}
   _animInterval: 0.5
+  _thoughtBubbleImage: {fileID: 2003302573640152540}
+  _desiredObjectSprite: {fileID: 21300000, guid: 1518cba004370a2489647b8cc0ee0a29, type: 3}
+  _correctObjectSprite: {fileID: 21300000, guid: b36eca28ab16b974c87b12b11170200d, type: 3}
+  _wrongObjectSprite: {fileID: 21300000, guid: 8c54b590515293b41bb6ba066455770a, type: 3}
+  _desiredDeliverableID: 0
+  _onSuccesfulDelivery:
+    m_PersistentCalls:
+      m_Calls: []
   _targetGroup: {fileID: 0}
   _nPCTargetGroupWeight: 1
   _nPCTargetGroupRadius: 3
-  _beaverChitter:
+  _defaultBeaverChitter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  _happyBeaverChitter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  _grumpyBeaverChitter:
     Guid:
       Data1: 0
       Data2: 0
@@ -176,6 +198,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2427170793460252019, guid: 0744b491a0829184a94016db794d8055, type: 3}
   m_PrefabInstance: {fileID: 2569400334029084900}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2003302573640152540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4063793800326196536, guid: 0744b491a0829184a94016db794d8055, type: 3}
+  m_PrefabInstance: {fileID: 2569400334029084900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5354952840331397602 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7636076099012579590, guid: 0744b491a0829184a94016db794d8055, type: 3}
