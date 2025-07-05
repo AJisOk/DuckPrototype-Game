@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -37,6 +38,8 @@ public class Grabable : MonoBehaviour
         _renderer = GetComponent<MeshRenderer>();
         _defaultMaterial = _renderer.material;
         _rigidbody = GetComponent<Rigidbody>();
+
+        _playerDuckController = FindAnyObjectByType(typeof(DuckCharacterController)).GetComponent<DuckCharacterController>();
     }
 
     public virtual void OnTarget()

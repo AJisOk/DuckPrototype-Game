@@ -9,10 +9,11 @@ public class NewPullable : Grabable
     [Header("Pullable")]
     [SerializeField] protected FixedJoint _fixedJoint;
     [SerializeField, Range(0, 5)] protected int _ducklingsRequiredToPull;
-    [SerializeField] protected TextMeshProUGUI _ducklingsRequiredText;
+    //[SerializeField] protected TextMeshProUGUI _ducklingsRequiredText;
     [SerializeField] float _pullingSpeed = 2f;
     [SerializeField] float _acceleration = 1f;
 
+    private Animator _pullableAnimator;
     private Rigidbody _duckRB;
 
     private bool _isBeingPulled = false;
@@ -23,12 +24,18 @@ public class NewPullable : Grabable
     {
         base.Awake();
 
-        if(_ducklingsRequiredText != null) _ducklingsRequiredText.text = "0/" + _ducklingsRequiredToPull.ToString();
+        //if(_ducklingsRequiredText != null) _ducklingsRequiredText.text = "0/" + _ducklingsRequiredToPull.ToString();
+        _pullableAnimator = GetComponent<Animator>();
+
+        _pullableAnimator.SetInteger("required", _ducklingsRequiredToPull+1);
+        _pullableAnimator.SetInteger("count", 1);
     }
 
     protected override void OnTriggerEnter(Collider other)
     {
         _duckRB = other.GetComponent<Rigidbody>();
+
+        _pullableAnimator.SetInteger("count", _playerDuckController.DucklingsFollowingCount+1);
 
         base.OnTriggerEnter(other);
     }
@@ -38,6 +45,13 @@ public class NewPullable : Grabable
         if (other.gameObject.layer != _duckLayer) return;
 
         _isPlayerNearby = false;
+    }
+
+    public override void OnHighlight()
+    {
+        _pullableAnimator.SetInteger("count", _playerDuckController.DucklingsFollowingCount+1);
+
+        base.OnHighlight();
     }
 
     public override void TryGrab()

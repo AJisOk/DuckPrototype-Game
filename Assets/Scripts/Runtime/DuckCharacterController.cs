@@ -240,12 +240,9 @@ public class DuckCharacterController : MonoBehaviour
         Debug.Log("Grab called on character controller");
         _isGrabbing = true;
         _currentTargetGrabable.TryGrab();
-
-        RuntimeManager.StudioSystem.setParameterByName("Number_of_Ducklings", DucklingsFollowingCount);
-        _pullingSoundInstance.start();
         
-
-
+        StartCoroutine(SetPullingSound());
+        
     }
 
     public void UnGrab()
@@ -256,13 +253,15 @@ public class DuckCharacterController : MonoBehaviour
         _isGrabbing = false;
         _currentTargetGrabable.TryUnGrab();
 
-        _pullingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        StartCoroutine(SetPullingSound());
     }
 
     public void UnableToGrab()
     {
-        //play sfx and sweating animation
+        //stop the pulling sfx loop
+        //_pullingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
+        //play sfx and sweating animation
         RuntimeManager.PlayOneShot(_unableToPullSoundEvent);
 
         UnGrab();
@@ -325,5 +324,23 @@ public class DuckCharacterController : MonoBehaviour
         _targetGroup.Targets[ducklingIndex].Weight = _ducklingTGWeight;
 
         yield return null;
+    }
+
+    private IEnumerator SetPullingSound()
+    {
+        yield return new WaitForSeconds(.1f);
+
+        if (_isGrabbing)
+        {
+            RuntimeManager.StudioSystem.setParameterByName("Number_of_Ducklings", DucklingsFollowingCount);
+            _pullingSoundInstance.start();
+        }
+        else
+        {
+            _pullingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+        }
+
+            yield return null;
     }
 }
