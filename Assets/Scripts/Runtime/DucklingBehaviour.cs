@@ -41,7 +41,6 @@ public class DucklingBehaviour : MonoBehaviour
 
     private Transform _ducklingTransform;
     private bool _isLost = true;
-    private bool _isPullingObject = false;
     private bool _isQuacking = false;
     private bool _hasBeenSpotted = false;
     private Vector3 _canvasPositionScreenPoint;
@@ -70,7 +69,7 @@ public class DucklingBehaviour : MonoBehaviour
         //if(_ducklingTransform == null) _ducklingTransform = GetComponentInParent<Transform>();
 
         _ducklingTransform = GetComponentInParent<Transform>();
-
+        transform.rotation = Quaternion.LookRotation(Vector3.back);
     }
 
     private void Update()

@@ -76,7 +76,7 @@ public class Grabable : MonoBehaviour
         _isGrabbed = true;
         OnGrabbed.Invoke();
 
-        _renderer.material = _grabbedMaterial;
+        //_renderer.material = _grabbedMaterial;
 
         //Debug.Log("TryGrab called on Grabable");
     }
@@ -86,7 +86,7 @@ public class Grabable : MonoBehaviour
         if (!_isTargeted) return;
         _isGrabbed = false;
 
-        _renderer.material = _defaultMaterial;
+        //_renderer.material = _defaultMaterial;
 
         //Debug.Log("TryUnGrab Called on Grabable");
     }
