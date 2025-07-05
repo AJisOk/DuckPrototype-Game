@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/DucklingMovementProto.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Abhi/Gym.unity
-    guid: 5681cda06e071b64494b7edf7de0dd4a
+    path: Assets/Scenes/MainScene.unity
+    guid: 36cbf69100fdc3d479811fbd58363efe
   - enabled: 1
     path: Assets/Scenes/angela.unity
     guid: 55e3f489c504d384193c135a59d2b9e5
