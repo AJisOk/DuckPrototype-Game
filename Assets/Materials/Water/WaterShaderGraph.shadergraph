@@ -1290,8 +1290,8 @@
     "m_ObjectId": "103f64f6e0704c5b87336b2f4a32eb0e",
     "m_Title": "Foam",
     "m_Position": {
-        "x": -3563.0,
-        "y": 580.0
+        "x": -3563.000244140625,
+        "y": 580.0000610351563
     }
 }
 
@@ -3815,7 +3815,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.5,
+    "m_Value": 0.30000001192092898,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
