@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 1341803944727408836}
   - component: {fileID: 3511483518798364106}
   - component: {fileID: 3905762608666902452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PopUpCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700874941566160272}
   - component: {fileID: 2200598954239328575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 7606104117839751103}
   - component: {fileID: 7458099505839733203}
   - component: {fileID: 8825199239350100892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 7197383342942120276}
   - component: {fileID: 3878135339040291719}
   - component: {fileID: 6377856635241745116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ReqCountImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
