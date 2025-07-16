@@ -93,6 +93,8 @@ public class MainMenuSequence : MonoBehaviour
         _transitionFill.fillAmount = 1f;
         timer = 0f;
 
+        yield return new WaitForSeconds(.2f);
+
         _titleScreenCanvas.gameObject.SetActive(false);
         _mainMenuCanvas.gameObject.SetActive(true);
 
