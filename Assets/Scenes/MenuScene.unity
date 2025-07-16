@@ -579,7 +579,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67114183}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1381,6 +1381,26 @@ PrefabInstance:
     - target: {fileID: 4277257991433283898, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792461838874553491, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/Music/Opening Area Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792461838874553491, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 1011007019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792461838874553491, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1266845354
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792461838874553491, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 1835035279
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792461838874553491, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: -1041600994
       objectReference: {fileID: 0}
     - target: {fileID: 8290841922982847011, guid: 722eb0077e7a25c43967290ef7b8ebdb, type: 3}
       propertyPath: m_Size.x
@@ -10022,9 +10042,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca69597cc4925e4fa814276d611a9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clickAnywhereCG: {fileID: 67114186}
   _titleScreenCanvas: {fileID: 1153666164}
   _transitionFill: {fileID: 940164583}
+  _clickAnywhereCG: {fileID: 67114186}
+  _transitionFillCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.00685456
+      outSlope: -0.00685456
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.11164305
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.006839022
+      outSlope: 0.006839022
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.102550924
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _textFlashCurve:
     serializedVersion: 2
     m_Curve:

@@ -8,9 +8,10 @@ public class MainMenuSequence : MonoBehaviour
     //this script handles the title screen animation and transition to main menu canvas
 
     [Header("Title Screen")]
-    [SerializeField] private CanvasGroup _clickAnywhereCG;
     [SerializeField] private Canvas _titleScreenCanvas;
     [SerializeField] private Image _transitionFill;
+    [SerializeField] private CanvasGroup _clickAnywhereCG;
+    [SerializeField] private AnimationCurve _transitionFillCurve;
     [SerializeField] private AnimationCurve _textFlashCurve;
 
     [Header("Main Menu")]
@@ -22,6 +23,13 @@ public class MainMenuSequence : MonoBehaviour
 
     private bool _hasPlayerClicked = false;
     private bool _acceptingInput = false;
+
+    private Canvas _transitionCanvas;
+
+    private void Awake()
+    {
+        _transitionCanvas = _transitionFill.GetComponentInParent<Canvas>();
+    }
 
     private void Start()
     {
@@ -47,13 +55,16 @@ public class MainMenuSequence : MonoBehaviour
 
         while(timer < 1f)
         {
-            _transitionFill.fillAmount = Mathf.Lerp(1f, 0f, timer);
+            _transitionFill.fillAmount = _transitionFillCurve.Evaluate(timer);
 
             timer += Time.deltaTime;
             yield return null;
         }
         _transitionFill.fillAmount = 0f;
+        _transitionCanvas.gameObject.SetActive(false);
         timer = 0f;
+
+        yield return new WaitForSeconds(.2f);
 
         _acceptingInput = true;
 
@@ -67,13 +78,16 @@ public class MainMenuSequence : MonoBehaviour
             yield return null;
         }
         _clickAnywhereCG.alpha = 0f;
-        timer = 0f;
 
-        while (timer < 1f)
+        yield return new WaitForSeconds(.2f);
+
+        timer = 1f;
+        _transitionCanvas.gameObject.SetActive(true);
+        while (timer > 0f)
         {
-            _transitionFill.fillAmount = Mathf.Lerp(0f, 1f, timer);
+            _transitionFill.fillAmount = _transitionFillCurve.Evaluate(timer);
 
-            timer += Time.deltaTime;
+            timer -= Time.deltaTime;
             yield return null;
         }
         _transitionFill.fillAmount = 1f;
@@ -84,12 +98,13 @@ public class MainMenuSequence : MonoBehaviour
 
         while (timer < 1f)
         {
-            _transitionFill.fillAmount = Mathf.Lerp(1f, 0f, timer);
+            _transitionFill.fillAmount = _transitionFillCurve.Evaluate(timer);
 
             timer += Time.deltaTime;
             yield return null;
         }
         _transitionFill.fillAmount = 0f;
+        _transitionCanvas.gameObject.SetActive(false);
         timer = 0f;
 
         yield return null;
