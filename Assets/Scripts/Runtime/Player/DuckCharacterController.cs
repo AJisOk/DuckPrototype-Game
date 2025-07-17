@@ -9,6 +9,9 @@ using UnityEngine.UIElements;
 using Unity.Cinemachine;
 using FMODUnity;
 using FMOD.Studio;
+using FMOD;
+
+using Debug = UnityEngine.Debug;
 
 public class DuckCharacterController : MonoBehaviour
 {
@@ -48,6 +51,8 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected EventReference _responseQuackSoundEvent;
     [SerializeField] protected EventReference _unableToPullSoundEvent;
     [SerializeField] protected EventReference _pullingSoundEvent;
+    [SerializeField] protected EventReference _lappingWaterSoundEvent;
+    [SerializeField] protected string _lappingWaterParameterName = "Duck_Moving";
 
     [Header("VFX")]
     [SerializeField] protected GameObject _vFXToInstantiate;
@@ -96,6 +101,9 @@ public class DuckCharacterController : MonoBehaviour
         }
 
         _vFXTimer += Time.deltaTime;
+
+        if (IsMoving) UpdateDuckMovingParameter(1.2f);
+        else UpdateDuckMovingParameter(0.5f);
     }
 
     private void FixedUpdate()
@@ -355,5 +363,10 @@ public class DuckCharacterController : MonoBehaviour
         }
 
             yield return null;
+    }
+
+    private void UpdateDuckMovingParameter(float  newValue)
+    {
+        RESULT result = RuntimeManager.StudioSystem.setParameterByName(_lappingWaterParameterName, newValue);
     }
 }

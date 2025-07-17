@@ -82,6 +82,7 @@ public class NPCBehaviour : MonoBehaviour
             }
 
             StartCoroutine(AddNPCToTG(_nPCSpriteRenderer.transform));
+            RuntimeManager.PlayOneShot(_defaultBeaverChitter);
             _nPCAnimator.SetBool("ShowThoughtBubble", true);
         }
 

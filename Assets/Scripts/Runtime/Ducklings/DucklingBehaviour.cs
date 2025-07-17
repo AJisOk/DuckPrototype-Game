@@ -121,8 +121,6 @@ public class DucklingBehaviour : MonoBehaviour
 
         _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
 
-        Debug.Log(_navMeshAgent.remainingDistance);
-
         if (IsMoving && _vFXTimer >= _vFXSpawnInterval)
         {
             Instantiate(_vFXToInstantiate, _vFXSpawnTransform.transform.position, Quaternion.identity);

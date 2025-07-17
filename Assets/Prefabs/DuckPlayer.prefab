@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4910403790862461293}
   - component: {fileID: 5232859548427787283}
   - component: {fileID: 3635842771388224077}
+  - component: {fileID: 4417683920416222218}
   m_Layer: 7
   m_Name: DuckPlayer
   m_TagString: Player
@@ -329,6 +330,14 @@ MonoBehaviour:
       Data3: -1987745382
       Data4: -1214724345
     Path: event:/SFX/Pulling
+  _lappingWaterSoundEvent:
+    Guid:
+      Data1: 1838424627
+      Data2: 1237450447
+      Data3: -503445854
+      Data4: -799291758
+    Path: event:/Ambience/Duck Lapping Water
+  _lappingWaterParameterName: Duck_Moving
   _vFXToInstantiate: {fileID: 8848807493236596062, guid: 33d06643e41a56e49a374bbe41bdb4d6, type: 3}
   _vFXSpawnInterval: 0.3
   _vFXSpawnTransform: {fileID: 7345495765237618486}
@@ -466,6 +475,37 @@ MonoBehaviour:
       Data4: 206816708
     Path: event:/SFX/Quack
   _listenerTriggerRange: 20
+--- !u!114 &4417683920416222218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196908276348227754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1838424627
+      Data2: 1237450447
+      Data3: -503445854
+      Data4: -799291758
+    Path: event:/Ambience/Duck Lapping Water
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3751843867403416825
 GameObject:
   m_ObjectHideFlags: 0
