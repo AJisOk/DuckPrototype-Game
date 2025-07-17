@@ -5,7 +5,7 @@
 			<value>Quack Response</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4b2edc4c-4da9-47fe-8cc5-a3d3249b2062}</destination>
@@ -56,7 +56,11 @@
 			<destination>{94743c8f-9784-4c82-9e81-e20c22d8e5e0}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{188cb586-8303-4954-b8b6-afa9e7b37671}" />
+	<object class="EventAutomatableProperties" id="{188cb586-8303-4954-b8b6-afa9e7b37671}">
+		<property name="maximumDistance">
+			<value>40</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{33a5c9ec-95c3-4033-92fa-c595535f9117}" />
 	<object class="GroupTrack" id="{699f8686-a750-467d-bf1e-1b7df3e07657}">
 		<relationship name="modules">
@@ -119,6 +123,7 @@
 	<object class="MixerBusEffectChain" id="{3f9eef3e-be86-45c1-95b4-9f859da9af40}">
 		<relationship name="effects">
 			<destination>{7879f517-7fd1-4eee-87b2-888047a193b8}</destination>
+			<destination>{ee685c6a-0582-4901-9f02-3f6feee51fdd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{650cd2bb-65cd-4d20-b9da-954912f5c64d}" />
@@ -165,5 +170,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{93b52cd8-1619-43af-96d5-5c7e6c530b9f}" />
 	<object class="MixerBusFader" id="{7879f517-7fd1-4eee-87b2-888047a193b8}" />
+	<object class="SpatialiserEffect" id="{ee685c6a-0582-4901-9f02-3f6feee51fdd}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{57dc82aa-c7a5-4288-b4cb-e3fd0f92574b}" />
 </objects>
