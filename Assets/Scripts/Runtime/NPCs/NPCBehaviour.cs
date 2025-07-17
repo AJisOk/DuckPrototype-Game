@@ -100,12 +100,16 @@ public class NPCBehaviour : MonoBehaviour
                 
                 _nPCAnimator.SetBool("ShowThoughtBubble", true);
 
+                RuntimeManager.PlayOneShot(_grumpyBeaverChitter);
+
                 return;
             }
 
             //play correct deliverable sfx and UI anim
             _thoughtBubbleImage.sprite = _correctObjectSprite;
             _nPCAnimator.SetBool("ShowThoughtBubble", true);
+
+            RuntimeManager.PlayOneShot(_happyBeaverChitter);
 
             _questComplete = true;
 
@@ -129,6 +133,7 @@ public class NPCBehaviour : MonoBehaviour
 
         _targetGroup.AddMember(areaToAdd, 0f, 0f);
         int areaIndex = _targetGroup.FindMember(areaToAdd);
+
 
         AnimationCurve animCurveW = AnimationCurve.Linear(0f, 0f, 1f, _nPCTargetGroupWeight*2f);
         AnimationCurve animCurveR = AnimationCurve.Linear(0f, 0f, 1f, _nPCTargetGroupRadius);
@@ -154,10 +159,14 @@ public class NPCBehaviour : MonoBehaviour
         //when anim finishes, set a running thought bubble that appears whenm the player re enters
         //let player move
 
+        //play first time enter sfx
+        RuntimeManager.PlayOneShot(_defaultBeaverChitter);
+
         _nPCAnimator.SetBool("ShowThoughtBubble", true);
 
         yield return new WaitForSeconds(_animInterval);
 
+        
         timer = 0f;
 
         AnimationCurve animCurveW2 = AnimationCurve.Linear(0f, _nPCTargetGroupWeight*2f, 1f, _nPCTargetGroupWeight);

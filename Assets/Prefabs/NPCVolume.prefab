@@ -84,25 +84,25 @@ MonoBehaviour:
   _nPCTargetGroupRadius: 3
   _defaultBeaverChitter:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -580969748
+      Data2: 1183931322
+      Data3: 1928860831
+      Data4: -1685902170
+    Path: event:/SFX/Beaver Neutral
   _happyBeaverChitter:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -354017884
+      Data2: 1319055531
+      Data3: -166152304
+      Data4: -35774036
+    Path: event:/SFX/Beaver Happy
   _grumpyBeaverChitter:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -998813639
+      Data2: 1278540634
+      Data3: 798502813
+      Data4: -1491138612
+    Path: event:/SFX/Beaver Negative
   _moveToTransform: {fileID: 3224018868462043056}
 --- !u!1 &8634960102983509489
 GameObject:
