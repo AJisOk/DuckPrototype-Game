@@ -49,7 +49,11 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected EventReference _unableToPullSoundEvent;
     [SerializeField] protected EventReference _pullingSoundEvent;
 
-    
+    [Header("VFX")]
+    [SerializeField] protected GameObject _vFXToInstantiate;
+    [SerializeField] protected float _vFXSpawnInterval = .1f;
+    [SerializeField] protected Transform _vFXSpawnTransform;
+
     //private variables
     private PlayerInput _playerInput;
 
@@ -60,6 +64,7 @@ public class DuckCharacterController : MonoBehaviour
     private EventInstance _pullingSoundInstance;
 
     private float _timer = 0f;
+    private float _vFXTimer = 0f;
     private float _responseCooldownTimer = 0f;
     private bool _isGrabbing = false;
     private bool _canMove = true;
@@ -84,6 +89,13 @@ public class DuckCharacterController : MonoBehaviour
         float normalizedEulerAngle = Mathf.InverseLerp(0f, 360f, transform.rotation.eulerAngles.y);
         _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
 
+        if(IsMoving && _vFXTimer >= _vFXSpawnInterval)
+        {
+            Instantiate(_vFXToInstantiate, _vFXSpawnTransform.transform.position, Quaternion.identity);
+            _vFXTimer = 0f;
+        }
+
+        _vFXTimer += Time.deltaTime;
     }
 
     private void FixedUpdate()

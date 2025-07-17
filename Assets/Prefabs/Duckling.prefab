@@ -225,6 +225,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1448752383281941030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620175509563865311}
+  m_Layer: 7
+  m_Name: VFXSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &620175509563865311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448752383281941030}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 951540645708601686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3716125669384799065
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +397,7 @@ GameObject:
   - component: {fileID: 236560466280413519}
   - component: {fileID: 3202593292056217432}
   - component: {fileID: 1468040461526106963}
+  - component: {fileID: 1778565311000719069}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -385,7 +417,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 620175509563865311}
   m_Father: {fileID: 251128115254465397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &236560466280413519
@@ -477,6 +510,66 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1778565311000719069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041824811601172268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609f900aba6051542958bc7ffd33d21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 236560466280413519}
+  _interval: 2
+  _offsetDistance: 0.05
+  _motionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.28037983
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.75
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _instantiateVFXOnBob: 1
+  _vFXToInstantiate: {fileID: 8848807493236596062, guid: 33d06643e41a56e49a374bbe41bdb4d6, type: 3}
+  _vFXSpawnLocation: {fileID: 620175509563865311}
 --- !u!1 &4047751403712401938
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +937,9 @@ MonoBehaviour:
       Data3: -12810080
       Data4: -612948031
     Path: event:/SFX/Duckling Joined
+  _vFXToInstantiate: {fileID: 8848807493236596062, guid: 33d06643e41a56e49a374bbe41bdb4d6, type: 3}
+  _vFXSpawnInterval: 0.3
+  _vFXSpawnTransform: {fileID: 620175509563865311}
 --- !u!135 &1518867844859183381
 SphereCollider:
   m_ObjectHideFlags: 0

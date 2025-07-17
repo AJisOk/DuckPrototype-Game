@@ -37,8 +37,15 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected EventReference _ducklingFoundSoundEvent;
     //[SerializeField] protected bool _hasPatternChallenge = false;
 
+    [Header("VFX")]
+    [SerializeField] protected GameObject _vFXToInstantiate;
+    [SerializeField] protected float _vFXSpawnInterval = .2f;
+    [SerializeField] protected Transform _vFXSpawnTransform;
+
     public bool IsLost { get => _isLost; }
 
+    private float _vFXTimer = 0f;
+    private float stoppingDistance = .6f;
     private Transform _ducklingTransform;
     private bool _isLost = true;
     private bool _isQuacking = false;
@@ -61,6 +68,11 @@ public class DucklingBehaviour : MonoBehaviour
             _canvasPositionScreenPoint.x >= Screen.width ||
             _canvasPositionScreenPoint.y <= 0 ||
             _canvasPositionScreenPoint.y >= Screen.height;
+    }
+
+    public bool IsMoving
+    {
+        get => _navMeshAgent.remainingDistance > stoppingDistance && _navMeshAgent.isStopped == false;
     }
 
     private void Awake()
@@ -108,6 +120,16 @@ public class DucklingBehaviour : MonoBehaviour
         float normalizedEulerAngle = Mathf.InverseLerp(0f, 360f, _ducklingTransform.rotation.eulerAngles.y);
 
         _spriteAnimator.SetFloat("NormalizedEulerAngle", normalizedEulerAngle);
+
+        Debug.Log(_navMeshAgent.remainingDistance);
+
+        if (IsMoving && _vFXTimer >= _vFXSpawnInterval)
+        {
+            Instantiate(_vFXToInstantiate, _vFXSpawnTransform.transform.position, Quaternion.identity);
+            _vFXTimer = 0f;
+        }
+
+        _vFXTimer += Time.deltaTime;
 
     }
 

@@ -329,6 +329,9 @@ MonoBehaviour:
       Data3: -1987745382
       Data4: -1214724345
     Path: event:/SFX/Pulling
+  _vFXToInstantiate: {fileID: 8848807493236596062, guid: 33d06643e41a56e49a374bbe41bdb4d6, type: 3}
+  _vFXSpawnInterval: 0.3
+  _vFXSpawnTransform: {fileID: 7345495765237618486}
 --- !u!114 &7161702867312113651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +385,7 @@ MonoBehaviour:
       Data3: 1471559860
       Data4: 1794011749
     Path: event:/SFX/Splash on Click
+  _instantiateOffset: {x: 0, y: 0.2, z: 0}
 --- !u!114 &5232859548427787283
 MonoBehaviour:
   m_ObjectHideFlags: 0
