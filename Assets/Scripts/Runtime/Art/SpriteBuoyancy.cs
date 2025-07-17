@@ -14,6 +14,13 @@ public class SpriteBuoyancy : MonoBehaviour
     [SerializeField] private float _offsetDistance = .3f;
     [SerializeField] private AnimationCurve _motionCurve;
 
+    [Header("VFX")]
+    [SerializeField] private bool _instantiateVFXOnBob = false;
+    //[SerializeField] private bool _instantiateVFXAtInterval = false;
+    [SerializeField] protected GameObject _vFXToInstantiate;
+    [SerializeField] protected Transform _vFXSpawnLocation;
+    //[SerializeField] protected float _vFXSpawnInterval = .2f;
+
     private float timer = 0f;
     private float initialYPosition;
     
@@ -48,7 +55,11 @@ public class SpriteBuoyancy : MonoBehaviour
             _sprite.transform.Translate(offset, Space.World);
 
             timer += Time.deltaTime;
-            if (timer >= _interval) timer = 0f;
+            if (timer >= _interval)
+            {
+                timer = 0f;
+                if(_instantiateVFXOnBob) Instantiate(_vFXToInstantiate, _vFXSpawnLocation.position, Quaternion.identity);
+            }
 
             
             yield return null;

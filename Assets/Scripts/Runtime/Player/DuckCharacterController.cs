@@ -49,6 +49,7 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected EventReference _unableToPullSoundEvent;
     [SerializeField] protected EventReference _pullingSoundEvent;
 
+    
     //private variables
     private PlayerInput _playerInput;
 
