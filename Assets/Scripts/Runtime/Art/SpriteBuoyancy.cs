@@ -45,7 +45,7 @@ public class SpriteBuoyancy : MonoBehaviour
             yOffset = yTargetPosition - _sprite.transform.position.y;
             offset = new Vector3(0f, yOffset, 0f);
 
-            _sprite.transform.Translate(offset);
+            _sprite.transform.Translate(offset, Space.World);
 
             timer += Time.deltaTime;
             if (timer >= _interval) timer = 0f;
