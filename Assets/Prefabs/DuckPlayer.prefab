@@ -384,16 +384,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabToInstantiate: {fileID: 8848807493236596062, guid: 33d06643e41a56e49a374bbe41bdb4d6, type: 3}
-  _layerMask:
+  _waterLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  _clickSound:
+  _pullableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _waterClickSound:
     Guid:
       Data1: 835644061
       Data2: 1090568342
       Data3: 1471559860
       Data4: 1794011749
     Path: event:/SFX/Splash on Click
+  _pullableClickSound:
+    Guid:
+      Data1: 472987196
+      Data2: 1174489177
+      Data3: 1135619980
+      Data4: 364946539
+    Path: event:/SFX/Thud on Click
   _instantiateOffset: {x: 0, y: 0.2, z: 0}
 --- !u!114 &5232859548427787283
 MonoBehaviour:
