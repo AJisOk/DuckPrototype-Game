@@ -47,7 +47,7 @@ public class NPCBehaviour : MonoBehaviour
 
     private bool _hasMetPlayer = false;
     private bool _questComplete = false;
-    private bool _isPlayerNearby = false;
+    //private bool _isPlayerNearby = false;
     
 
     private void Awake()

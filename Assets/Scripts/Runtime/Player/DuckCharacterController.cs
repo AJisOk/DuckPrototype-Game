@@ -64,7 +64,7 @@ public class DuckCharacterController : MonoBehaviour
 
     private List<Vector3> _ducklingNextFollowPositions = new List<Vector3>();
     private Vector3 _moveToDestination;
-    private Grabable _currentHighlightedGrabable = null;
+    //private Grabable _currentHighlightedGrabable = null;
     private Grabable _currentTargetGrabable = null;
     private EventInstance _pullingSoundInstance;
 

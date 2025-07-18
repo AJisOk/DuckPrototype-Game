@@ -22,7 +22,7 @@ public class PatternChallengeHandler : MonoBehaviour
     [SerializeField] protected CanvasGroup _playerAttemptCG;
     [SerializeField] protected List<TextMeshProUGUI> _playerAttemptTextList;
 
-    private bool _isChallengeLive = false;
+    //private bool _isChallengeLive = false;
     private bool _isAcceptingAttempt = false;
     private CinemachineGroupFraming _cinemachineGroupFramingComponent;
     private List<int> _attemptPattern = new List<int>();
@@ -44,7 +44,7 @@ public class PatternChallengeHandler : MonoBehaviour
 
     public void StartChallenge(Transform ducklingWorldTransform)
     {
-        _isChallengeLive = true;
+        //_isChallengeLive = true;
 
         _cinemachinTargetGroup.AddMember(ducklingWorldTransform, 1f, 0f);
 

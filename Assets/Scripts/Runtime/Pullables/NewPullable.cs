@@ -10,8 +10,8 @@ public class NewPullable : Grabable
     [SerializeField] protected FixedJoint _fixedJoint;
     [SerializeField, Range(0, 5)] protected int _ducklingsRequiredToPull;
     //[SerializeField] protected TextMeshProUGUI _ducklingsRequiredText;
-    [SerializeField] float _pullingSpeed = 2f;
-    [SerializeField] float _acceleration = 1f;
+    //[SerializeField] float _pullingSpeed = 2f;
+    //[SerializeField] float _acceleration = 1f;
 
     private Animator _pullableAnimator;
     private Rigidbody _duckRB;
