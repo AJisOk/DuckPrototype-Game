@@ -56,6 +56,7 @@ public class MainMenuSequence : MonoBehaviour
 
     private IEnumerator GameOpen()
     {
+
         float timer = 0f;
 
         while(timer < 1f)
