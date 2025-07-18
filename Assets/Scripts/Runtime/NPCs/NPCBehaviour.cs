@@ -70,7 +70,7 @@ public class NPCBehaviour : MonoBehaviour
 
             if (!_hasMetPlayer)
             {
-                _hasMetPlayer = true;
+                //_hasMetPlayer = true;
 
                 _playerController.UnGrab();
                 _playerController.SetCanMove(false);
@@ -185,6 +185,8 @@ public class NPCBehaviour : MonoBehaviour
 
 
         _playerController.SetCanMove(true);
+
+        _hasMetPlayer = true;
 
         yield return null;
     }

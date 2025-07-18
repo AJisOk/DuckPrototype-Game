@@ -13,9 +13,11 @@ public class Grabable : MonoBehaviour
     [Header("Interaction")]
     [SerializeField] protected Collider _grabRangeTrigger;
     [SerializeField] protected int _duckLayer = 7;
+
+    [Header("Highlight")]
     [SerializeField] protected CanvasGroup _popupCanvasGroup;
     [SerializeField] protected Material _grabbedMaterial;
-
+    [SerializeField] protected Material _higlightMaterial;
 
     protected bool _isTargeted = false;
     protected bool _isHighlighted = false;
@@ -27,16 +29,31 @@ public class Grabable : MonoBehaviour
     protected Material _defaultMaterial;
     protected Rigidbody _rigidbody;
 
-    public UnityEvent OnGrabbed;
+    protected List<Material> baseMaterials = new List<Material>();
+    protected List<Material> highlightMaterials = new List<Material>();
+    protected List<Material> grabbedMaterials = new List<Material>();
 
-    
+    public UnityEvent OnGrabbed;
     public List<Transform> DucklingGrabTransforms = new List<Transform>();
     public bool IsPlayerNearby { get => _isPlayerNearby; }
 
     protected virtual void Awake()
     {
         _renderer = GetComponent<MeshRenderer>();
-        _defaultMaterial = _renderer.material;
+        //_renderer.GetMaterials(baseMaterials);
+        //higlightMaterials = baseMaterials;
+        //grabbedMaterials = baseMaterials;
+
+        foreach(Material mat in _renderer.materials)
+        {
+            baseMaterials.Add(mat);
+            highlightMaterials.Add(mat);
+            grabbedMaterials.Add(mat);
+        }
+
+        highlightMaterials.Add(_higlightMaterial);
+        grabbedMaterials.Add(_grabbedMaterial);
+
         _rigidbody = GetComponent<Rigidbody>();
 
         _playerDuckController = FindAnyObjectByType(typeof(DuckCharacterController)).GetComponent<DuckCharacterController>();
@@ -61,12 +78,17 @@ public class Grabable : MonoBehaviour
     {
         _isHighlighted = true;
         _popupCanvasGroup.alpha = 1f;
+
+        if(!_isGrabbed) _renderer.SetMaterials(highlightMaterials);
+        
     }
 
     public virtual void OnUnhighlight()
     {
         _isHighlighted = false;
         _popupCanvasGroup.alpha = 0f;
+
+        if (!_isGrabbed) _renderer.SetMaterials(baseMaterials);
     }
 
     public virtual void TryGrab()
@@ -76,9 +98,7 @@ public class Grabable : MonoBehaviour
         _isGrabbed = true;
         OnGrabbed.Invoke();
 
-        //_renderer.material = _grabbedMaterial;
-
-        //Debug.Log("TryGrab called on Grabable");
+        _renderer.SetMaterials(grabbedMaterials);
     }
 
     public virtual void TryUnGrab()
@@ -86,9 +106,7 @@ public class Grabable : MonoBehaviour
         if (!_isTargeted) return;
         _isGrabbed = false;
 
-        //_renderer.material = _defaultMaterial;
-
-        //Debug.Log("TryUnGrab Called on Grabable");
+        _renderer.SetMaterials(baseMaterials);
     }
 
     protected virtual void OnMouseEnter()
