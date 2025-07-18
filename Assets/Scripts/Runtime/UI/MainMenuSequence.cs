@@ -36,6 +36,11 @@ public class MainMenuSequence : MonoBehaviour
         StartCoroutine(GameOpen());
     }
 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
     private void Update()
     {
      
