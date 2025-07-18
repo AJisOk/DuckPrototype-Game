@@ -805,6 +805,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &116664469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,6 +2046,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &295250561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,6 +2239,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &378141060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3376,6 +3379,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!212 &623805032
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4367,6 +4371,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &776939791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4830,6 +4835,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &848470772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5316,6 +5322,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &920070710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5476,6 +5483,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &928646771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5997,6 +6005,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1153893077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6226,6 +6235,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1179542210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6597,6 +6607,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1254797625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6907,6 +6918,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1349190743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7252,6 +7264,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1380775121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7444,6 +7457,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1390526058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7884,6 +7898,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1437505768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8751,6 +8766,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1759128049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8911,6 +8927,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1770163058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9351,6 +9368,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!212 &1810584876
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9724,6 +9742,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1828122284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9916,6 +9935,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1850375429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10399,6 +10419,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &1911873673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10626,6 +10647,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!212 &1955621664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11006,6 +11028,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &2063160684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11166,6 +11189,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &2079176100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11502,6 +11526,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!114 &2123174339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13416,6 +13441,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _instantiateVFXOnBob: 0
   _vFXToInstantiate: {fileID: 0}
+  _vFXSpawnLocation: {fileID: 0}
 --- !u!1 &7124032770478712788
 GameObject:
   m_ObjectHideFlags: 0
