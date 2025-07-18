@@ -272,7 +272,7 @@ public class DucklingBehaviour : MonoBehaviour
         _isQuacking = true;
 
         //FOR BRIAN duckling quack wehn it is closest to the player
-        RuntimeManager.PlayOneShot(_ducklingQuackSound);
+        RuntimeManager.PlayOneShotAttached(_ducklingQuackSound, this.gameObject);
 
         while (timer <= _lostQuackAnimDuration)
         {
@@ -296,7 +296,7 @@ public class DucklingBehaviour : MonoBehaviour
         _isQuacking = true;
 
         //FOR BRIAN queiter duckling quack for when its not the closest to the player
-        RuntimeManager.PlayOneShot(_ducklingQuackSound);
+        RuntimeManager.PlayOneShotAttached(_ducklingQuackSound, this.gameObject);
 
         //while (timer <= _lostQuackAnimDuration)
         //{
@@ -318,7 +318,7 @@ public class DucklingBehaviour : MonoBehaviour
         _isQuacking = true;
 
         //FOR BRIAN duckling quacking when IS collected here
-        RuntimeManager.PlayOneShot(_ducklingQuackSound);
+        RuntimeManager.PlayOneShotAttached(_ducklingQuackSound,this.gameObject);
 
         while (timer <= _happyQuackAnimDuration)
         {
