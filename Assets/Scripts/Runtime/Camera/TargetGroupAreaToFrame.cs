@@ -90,6 +90,8 @@ public class TargetGroupAreaToFrame : MonoBehaviour
         _targetGroup.Targets[areaIndex].Weight = 0f;
         _targetGroup.Targets[areaIndex].Radius = 0f;
 
+        yield return new WaitForEndOfFrame();
+
         _targetGroup.RemoveMember(areaToAdd);
 
         yield return null;

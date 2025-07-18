@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
 using FMODUnity;
+using UnityEngine.Events;
 public class DucklingBehaviour : MonoBehaviour
 {
     //when duck gets close enouhg, check if anything in between duckling and duck, if not, start following duck
@@ -42,6 +43,8 @@ public class DucklingBehaviour : MonoBehaviour
     [SerializeField] protected float _vFXSpawnInterval = .2f;
     [SerializeField] protected Transform _vFXSpawnTransform;
 
+    [Header("GameManager")]
+    [SerializeField] protected UnityEvent _onDucklingCollected;
     public bool IsLost { get => _isLost; }
 
     private float _vFXTimer = 0f;
@@ -353,6 +356,8 @@ public class DucklingBehaviour : MonoBehaviour
         //TODO create a short sequence when we discover a duckling
 
         RuntimeManager.PlayOneShot(_ducklingFoundSoundEvent);
+
+        _onDucklingCollected.Invoke();
 
         //old
         //duckPlayer.AddDuckling(this.GetComponentInParent<NavMeshAgent>());

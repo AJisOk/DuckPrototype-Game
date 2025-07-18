@@ -75,7 +75,7 @@ public class DuckQuackHandler : MonoBehaviour
 
         if (ducklingsInRange.Count == 0) return;
 
-        _closestLostDuckling.TryFocusedQuack();
+        if(_closestLostDuckling != null) _closestLostDuckling.TryFocusedQuack();
 
         foreach (DucklingBehaviour db in ducklingsInRange) db.TryMutedQuack();
 

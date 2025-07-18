@@ -21,12 +21,18 @@ public class GameManager : MonoBehaviour
     private bool allNPCsHelped = false;
     private bool allDucklingsCollected = false;
 
+    private void Awake()
+    {
+        _nPCText.text = "Beavers Helped:  " + nPCsHelped.ToString() + " / " + _nPCsTotal.ToString();
+        _ducklingText.text = "Ducklings Found:  " + ducklingsCollected.ToString() + " / " + _ducklingsTotal.ToString();
+    }
+
     public void NPCHelped()
     {
         if (allNPCsHelped) return;
 
         nPCsHelped++;
-        _nPCText.text = "Beavers Helped: " + nPCsHelped.ToString() + " / " + _nPCsTotal.ToString();
+        _nPCText.text = "Beavers Helped:  " + nPCsHelped.ToString() + " / " + _nPCsTotal.ToString();
 
         if (nPCsHelped == _nPCsTotal)
         {
@@ -41,7 +47,7 @@ public class GameManager : MonoBehaviour
         if (allDucklingsCollected) return;
 
         ducklingsCollected++;
-        _nPCText.text = "Ducklings Found: " + ducklingsCollected.ToString() + " / " + _ducklingsTotal.ToString();
+        _ducklingText.text = "Ducklings Found:  " + ducklingsCollected.ToString() + " / " + _ducklingsTotal.ToString();
 
         if (ducklingsCollected == _ducklingsTotal)
         {

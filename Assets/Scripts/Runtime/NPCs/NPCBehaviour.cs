@@ -112,9 +112,9 @@ public class NPCBehaviour : MonoBehaviour
 
             RuntimeManager.PlayOneShot(_happyBeaverChitter);
 
-            _questComplete = true;
+            if(!_questComplete) _onSuccesfulDelivery.Invoke();
 
-            _onSuccesfulDelivery.Invoke();
+            _questComplete = true;
         }
     }
 
@@ -212,6 +212,7 @@ public class NPCBehaviour : MonoBehaviour
         _targetGroup.Targets[areaIndex].Weight = _nPCTargetGroupWeight;
         _targetGroup.Targets[areaIndex].Radius = _nPCTargetGroupRadius;
 
+
         yield return null;
     }
 
@@ -235,6 +236,8 @@ public class NPCBehaviour : MonoBehaviour
         }
         _targetGroup.Targets[areaIndex].Weight = 0f;
         _targetGroup.Targets[areaIndex].Radius = 0f;
+
+        yield return new WaitForEndOfFrame();
 
         _targetGroup.RemoveMember(areaToAdd);
 
