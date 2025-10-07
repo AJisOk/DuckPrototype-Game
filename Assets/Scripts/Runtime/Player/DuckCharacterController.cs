@@ -13,6 +13,8 @@ using FMOD;
 
 using Debug = UnityEngine.Debug;
 
+using Cursor = UnityEngine.Cursor;
+
 public class DuckCharacterController : MonoBehaviour
 {
     //Character controller will handle input and movement
@@ -54,6 +56,11 @@ public class DuckCharacterController : MonoBehaviour
     [SerializeField] protected EventReference _lappingWaterSoundEvent;
     [SerializeField] protected string _lappingWaterParameterName = "Duck_Moving";
 
+    [Header("Cursor")]
+    [SerializeField] protected Texture2D _pressedCursorTexture;
+    [SerializeField] protected Texture2D _defaultCursorTexture;
+    [SerializeField] protected float _cursorPressedDuration = .2f;
+
     [Header("VFX")]
     [SerializeField] protected GameObject _vFXToInstantiate;
     [SerializeField] protected float _vFXSpawnInterval = .1f;
@@ -70,6 +77,8 @@ public class DuckCharacterController : MonoBehaviour
 
     private float _timer = 0f;
     private float _vFXTimer = 0f;
+    private float _cursorTimer = 0f;
+    private bool _isCursorPressed = false;
     private float _responseCooldownTimer = 0f;
     private bool _isGrabbing = false;
     private bool _canMove = true;
@@ -117,6 +126,15 @@ public class DuckCharacterController : MonoBehaviour
             if (_isGrabbing) DucklingsSwarmGrabable();
         }
 
+        if(_isCursorPressed) _cursorTimer += Time.deltaTime;
+
+        if(_cursorTimer >= _cursorPressedDuration)
+        {
+            _cursorTimer = 0f;
+            _isCursorPressed = false;
+            Cursor.SetCursor(_defaultCursorTexture, Vector2.zero, CursorMode.Auto);
+        }
+
     }
 
     private void OnMoveTo(InputValue inputValue)
@@ -125,6 +143,10 @@ public class DuckCharacterController : MonoBehaviour
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        //play cursor animation
+        Cursor.SetCursor(_pressedCursorTexture, Vector2.zero, CursorMode.Auto);
+        _isCursorPressed = true;
 
         //check if a grabable was clicked on
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, _grabableLayerMask, QueryTriggerInteraction.Ignore))

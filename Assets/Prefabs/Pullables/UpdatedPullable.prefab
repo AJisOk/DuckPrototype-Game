@@ -158,8 +158,6 @@ MonoBehaviour:
   - {fileID: 2498612347176344460}
   _fixedJoint: {fileID: 2580820113044480869}
   _ducklingsRequiredToPull: 0
-  _pullingSpeed: 4
-  _acceleration: 1
 --- !u!65 &8228350171007076009
 BoxCollider:
   m_ObjectHideFlags: 0

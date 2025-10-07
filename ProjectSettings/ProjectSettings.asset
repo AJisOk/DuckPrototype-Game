@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: QuiverGamesTeasm9
   productName: DuckPrototype
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: ba7a2c2885c3ffb45837b2d98d3abf05, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1

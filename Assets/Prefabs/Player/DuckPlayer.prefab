@@ -338,6 +338,9 @@ MonoBehaviour:
       Data4: -799291758
     Path: event:/Ambience/Duck Lapping Water
   _lappingWaterParameterName: Duck_Moving
+  _pressedCursorTexture: {fileID: 2800000, guid: 9353b4f1577e3a34f8d75df2bae114d7, type: 3}
+  _defaultCursorTexture: {fileID: 2800000, guid: ba7a2c2885c3ffb45837b2d98d3abf05, type: 3}
+  _cursorPressedDuration: 0.1
   _vFXToInstantiate: {fileID: 8848807493236596062, guid: 33d06643e41a56e49a374bbe41bdb4d6, type: 3}
   _vFXSpawnInterval: 0.3
   _vFXSpawnTransform: {fileID: 7345495765237618486}
